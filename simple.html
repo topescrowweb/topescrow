@@ -1,0 +1,2925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Escrow - Professional Escrow Services</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/TopEscrowFlavicon.svg?v=2" sizes="any">
+    <link rel="shortcut icon" href="assets/images/TopEscrowFlavicon.svg?v=2">
+    <link rel="apple-touch-icon" href="assets/images/TopEscrowFlavicon.svg?v=2" sizes="180x180">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            margin-left: -1.5rem;
+        }
+
+        .logo-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+        }
+
+        .logo-text {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #1f2937;
+            line-height: 1.2;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #4364A1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #334388;
+            border-bottom: 2px solid #334388;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: #6b7280;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #4364A1;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            background: #f3f4f6;
+        }
+
+        /* Page Content */
+        .page {
+            display: none;
+            padding-top: 64px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            background: #f9fafb;
+            padding: 4rem 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #6b7280;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: #4364A1;
+            margin-right: 0.75rem;
+            font-weight: bold;
+        }
+
+        .hero-image-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image {
+            width: 480px;
+            height: 360px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Services Section */
+        .services-hero {
+            background: #4364A1;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .services-hero h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .btn {
+            background: white;
+            color: #4364A1;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #f3f4f6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: #f9fafb;
+            padding: 4rem 0;
+            overflow: hidden;
+            contain: layout;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .faq-icon {
+            text-align: center;
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            object-fit: contain;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .faq h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-weight: 500;
+            color: #1f2937;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f9fafb;
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem;
+            color: #6b7280;
+            border-top: 1px solid #f3f4f6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+
+        .faq-answer.active {
+            max-height: 200px;
+            padding: 1rem 1.25rem 1.25rem;
+        }
+
+        .faq-toggle {
+            color: #4364A1;
+            font-size: 1.25rem;
+        }
+
+        /* FAQ Bubble Section */
+        .faq-bubble-section {
+            position: relative;
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #4364A1 0%, #4364A1 50%, #f9fafb 50%, #f9fafb 100%);
+            overflow: visible;
+        }
+        
+        .faq-bubble-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .faq-bubble {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.1);
+            max-width: 900px;
+            width: 90%;
+            position: relative;
+            padding: 3rem;
+            border: 3px solid rgba(67, 100, 161, 0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .faq-bubble:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.2), 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .faq-bubble-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(67, 100, 161, 0.1);
+        }
+        
+        .faq-bubble-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: block;
+            object-fit: contain;
+        }
+        
+        .faq-bubble-header h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-bubble-header p {
+            color: #6b7280;
+            font-size: 1.125rem;
+            margin: 0;
+        }
+        
+        .faq-bubble-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .faq-bubble-items .faq-item {
+            background: #f9fafb;
+            border-radius: 12px;
+            border: 1px solid rgba(67, 100, 161, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-bubble-items .faq-item:hover {
+            border-color: #4364A1;
+            box-shadow: 0 4px 8px rgba(67, 100, 161, 0.1);
+        }
+
+        /* Steps Section */
+        .steps-section {
+            text-align: center;
+            padding: 6rem 0;
+            position: relative;
+            z-index: 10;
+            background: #f9fafb;
+            isolation: isolate;
+        }
+        
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .steps-header {
+            margin-bottom: 4rem;
+        }
+
+        .steps-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .steps-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .steps-image-container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.05);
+            border: 2px solid rgba(67, 100, 161, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        
+        .steps-image-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .steps-image {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .steps-image-container:hover .steps-image {
+            transform: scale(1.02);
+        }
+        
+        .steps-cta {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(67, 100, 161, 0.2);
+        }
+        
+        .steps-cta p {
+            color: #6b7280;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .steps-cta .btn {
+            background: #4364A1;
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .steps-cta .btn:hover {
+            background: #334388;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(67, 100, 161, 0.3);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: #f9fafb;
+            padding: 2rem 0;
+        }
+
+        .contact-form-section {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .contact-container {
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .contact-container h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(67, 100, 161, 0.3);
+            filter: brightness(1.1);
+        }
+
+        .contact-form {
+            background: white;
+            border: 4px solid #4364A1;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: #f9fafb;
+            outline: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            background: white;
+            border-color: #4364A1;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: #f9fafb;
+            outline: none;
+            transition: all 0.3s;
+            resize: none;
+            height: 120px;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-textarea:focus {
+            background: white;
+            border-color: #4364A1;
+        }
+
+        .character-count {
+            text-align: right;
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .character-count.warning {
+            color: #f59e0b;
+        }
+
+        .character-count.limit {
+            color: #ef4444;
+        }
+
+        /* Success Modal */
+        .success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .success-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Help Modal */
+        .help-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .help-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .help-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .help-modal.active .help-modal-content {
+            transform: scale(1);
+        }
+
+        .help-icon {
+            width: 80px;
+            height: 80px;
+            background: #4364A1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .help-modal h3 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .help-modal p {
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .help-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .help-option-btn {
+            background: #4364A1;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .help-option-btn:hover {
+            background: #334388;
+            transform: translateY(-2px);
+        }
+
+        .help-option-btn.secondary {
+            background: white;
+            color: #4364A1;
+            border: 2px solid #4364A1;
+        }
+
+        .help-option-btn.secondary:hover {
+            background: #f3f4f6;
+        }
+
+        .help-close-btn {
+            background: #6b7280;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 0.875rem;
+        }
+
+        .help-close-btn:hover {
+            background: #4b5563;
+        }
+
+        .success-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .success-modal.active .success-modal-content {
+            transform: scale(1);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .success-modal h3 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .success-modal p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .success-details {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .success-details h4 {
+            color: #4364A1;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .success-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .success-details li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .success-details li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        .success-close-btn {
+            background: #4364A1;
+            color: white;
+            border: none;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .success-close-btn:hover {
+            background: #334388;
+        }
+
+        .submit-btn {
+            background: #4364A1;
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 9999px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #334388;
+            transform: scale(1.05);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Office Cards */
+        .offices-section {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .office-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .office-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(67, 100, 161, 0.2);
+            border: 2px solid #4364A1;
+        }
+
+        .office-map {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+
+        .office-info {
+            padding: 1.5rem;
+        }
+
+        .office-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #4364A1;
+            margin-bottom: 1rem;
+        }
+
+        .office-address {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .office-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4b5563;
+            font-size: 0.875rem;
+        }
+
+        .contact-item strong {
+            color: #4364A1;
+            min-width: 60px;
+        }
+
+        /* Team Grid Alignment */
+        .about-team-grid {
+            justify-items: center;
+        }
+
+        .about-team-grid > div:nth-child(n+5) {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #4364A1;
+            color: white;
+            padding: 3rem 0 1rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-offices {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-office {
+            text-align: left;
+        }
+
+        .footer-office h4 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-office p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-contact p {
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-contact-section {
+            text-align: left;
+        }
+
+        .footer-contact-section h4 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-contact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-contact-section h5 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contact-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+        }
+
+        /* Service Slider - Desktop & Mobile */
+        .service-slider-container {
+            max-width: 500px;
+            margin: 0 auto 1.5rem auto;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding-bottom: 2.5rem;
+        }
+        
+        .service-slider-wrapper {
+            overflow: hidden;
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .service-slider {
+            display: flex;
+            transition: transform 0.3s ease;
+            background: white;
+        }
+        
+        .service-slide {
+            min-width: 100%;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .service-slide h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4364A1;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-slide p {
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin: 0;
+            max-width: 400px;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #f3f4f6;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .slider-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            color: #4364A1;
+            font-weight: bold;
+        }
+        
+        .slider-arrow:hover {
+            background: #4364A1;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background: #4364A1;
+            transform: scale(1.3);
+        }
+
+        /* Help Button */
+        .help-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #4364A1;
+            color: white;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .help-btn:hover {
+            background: #334388;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .logo {
+                margin-left: 0;
+            }
+
+            .hero-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            /* Hero Mobile Improvements */
+            .hero {
+                padding: 3rem 0 !important;
+            }
+            
+            .hero-grid > div:first-child {
+                text-align: center !important;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1rem !important;
+                color: #1f2937;
+            }
+            
+            .hero p {
+                font-size: 1.125rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 1.5rem !important;
+                color: #4b5563;
+                max-width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            /* Mobile Service Slider Overrides */
+            .service-slider-container {
+                max-width: 300px !important;
+                margin: 0 auto 2rem auto !important;
+            }
+            
+            .service-slide {
+                padding: 2rem 1.5rem !important;
+            }
+            
+            .service-slide h3 {
+                font-size: 1.25rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .service-slide p {
+                font-size: 0.875rem !important;
+                line-height: 1.5 !important;
+            }
+            
+            .slider-controls {
+                gap: 1rem !important;
+                padding: 0.75rem !important;
+            }
+            
+            .slider-arrow {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 14px !important;
+            }
+            
+            .slider-dots {
+                gap: 0.5rem !important;
+            }
+            
+            .slider-dot {
+                width: 8px !important;
+                height: 8px !important;
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 320px;
+                height: 240px;
+            }
+
+            .hero-image-container {
+                justify-content: center;
+            }
+
+            .faq-icon {
+                width: 250px;
+                height: 250px;
+            }
+
+            .steps-image {
+                max-width: 95%;
+            }
+
+            /* FAQ Bubble Mobile Styles */
+            .faq-bubble-section {
+                padding: 4rem 0;
+            }
+            
+            .faq-bubble {
+                width: 95%;
+                padding: 2rem;
+                border-radius: 16px;
+                margin: 0 1rem;
+            }
+            
+            .faq-bubble-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .faq-bubble-header p {
+                font-size: 1rem;
+            }
+            
+            .faq-bubble-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            /* Steps Mobile Styles */
+            .steps-section {
+                padding: 4rem 0;
+            }
+            
+            .steps-container {
+                padding: 0 1rem;
+            }
+            
+            .steps-section h2 {
+                font-size: 2rem;
+            }
+            
+            .steps-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .steps-image-container {
+                padding: 2rem;
+                border-radius: 16px;
+            }
+            
+            .steps-header {
+                margin-bottom: 3rem;
+            }
+
+            /* Contact Form Mobile Styles */
+            .contact-container {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+
+            .contact-container h1 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+                border-radius: 1rem;
+                border-width: 3px;
+            }
+
+            .contact-icons {
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .form-input,
+            .form-textarea {
+                padding: 0.875rem;
+                font-size: 0.875rem;
+            }
+
+            .submit-btn {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            /* Office Section Header Mobile */
+            .offices-section .container > div:first-child {
+                margin-bottom: 2rem !important;
+                padding: 1.25rem !important;
+                background: #f9fafb !important;
+                border-radius: 8px !important;
+                border: 2px solid #4364A1 !important;
+            }
+            
+            .offices-section h2 {
+                font-size: 1.75rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .offices-section p {
+                font-size: 1rem !important;
+                max-width: 100% !important;
+            }
+
+            /* Office Cards Mobile */
+            .offices-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 1rem;
+                padding: 0 1rem;
+                max-width: 100%;
+            }
+            
+            .offices-grid > div:nth-child(3) {
+                grid-column: 1 / -1;
+                max-width: 50%;
+                margin: 0 auto;
+            }
+
+            .office-card {
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .office-map {
+                height: 140px;
+                flex-shrink: 0;
+            }
+
+            .office-info {
+                padding: 1rem;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            .office-title {
+                font-size: 0.95rem !important;
+                margin-bottom: 0.5rem !important;
+                line-height: 1.2 !important;
+                font-weight: 600 !important;
+            }
+            
+            .office-address {
+                font-size: 0.8rem !important;
+                line-height: 1.3 !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .office-contact {
+                margin-top: auto;
+            }
+            
+            .contact-item {
+                font-size: 0.75rem !important;
+                margin-bottom: 0.25rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            .contact-item strong {
+                font-size: 0.75rem !important;
+            }
+
+            /* Services Grid Mobile */
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+            }
+
+            .service-card {
+                padding: 1rem;
+                text-align: center;
+            }
+            
+            .service-card h3 {
+                font-size: 1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .service-card p {
+                font-size: 0.8rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .service-card img,
+            .service-card div[style*="height: 80px"] {
+                height: 60px !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            /* About Page Mobile */
+            .about-main-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+            }
+
+            .about-main-grid > div:last-child {
+                order: -1;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .about-features-grid {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: auto !important;
+                gap: 1rem;
+            }
+
+            /* Team Section Mobile Responsive */
+            .about-team-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.75rem !important;
+            }
+
+            .about-office-headers {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 0.5rem !important;
+            }
+            
+            /* Mobile Office Header Cards */
+            .about-office-headers > div {
+                padding: 1rem !important;
+                font-size: 0.75rem !important;
+            }
+            
+            .about-office-headers h3 {
+                font-size: 0.875rem !important;
+                margin-bottom: 0.25rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .about-office-headers p {
+                font-size: 0.7rem !important;
+                margin-bottom: 0.25rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            .about-office-headers p[style*="margin-top: 0.5rem"] {
+                margin-top: 0.25rem !important;
+            }
+            
+            /* Mobile Team Member Cards */
+            .team-member {
+                padding: 1rem !important;
+                font-size: 0.875rem !important;
+            }
+            
+            .team-member h3 {
+                font-size: 1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .team-member p {
+                font-size: 0.75rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .team-member div[style*="background: #f9fafb"] {
+                padding: 0.75rem !important;
+            }
+            
+            .team-member div[style*="background: #f9fafb"] p {
+                font-size: 0.7rem !important;
+            }
+
+            /* General Mobile Adjustments */
+            .section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .services-hero h1,
+            .services-hero h2 {
+                font-size: 2rem !important;
+            }
+
+            .services-hero p {
+                font-size: 1rem !important;
+            }
+
+            /* Footer Mobile */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-offices {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.75rem;
+            }
+            
+            .footer-office {
+                text-align: center;
+                padding: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 120px;
+            }
+            
+            .footer-office h4 {
+                font-size: 0.8rem !important;
+                margin-bottom: 0.4rem !important;
+                line-height: 1.2;
+                padding-bottom: 0.3rem !important;
+            }
+            
+            .footer-office p {
+                font-size: 0.7rem !important;
+                line-height: 1.3 !important;
+                margin-bottom: 0.4rem !important;
+            }
+            
+            .footer-contact {
+                margin-top: auto;
+                padding-top: 0.5rem;
+            }
+            
+            .footer-contact p {
+                font-size: 0.65rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+
+            .footer-contact-grid {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">
+                <img src="assets/images/TopEscrowNewLogo.svg" alt="Top Escrow Logo" class="logo-icon">
+                <div class="logo-text">Top<br>Escrow</div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('resources')">Resources</a></li>
+                <li><a href="#" class="nav-link" onclick="showPage('contact')">Contact Us</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#" onclick="showPage('home'); toggleMobileMenu()">Home</a>
+            <a href="#" onclick="showPage('about'); toggleMobileMenu()">About Us</a>
+            <a href="#" onclick="showPage('services'); toggleMobileMenu()">Services</a>
+            <a href="#" onclick="showPage('resources'); toggleMobileMenu()">Resources</a>
+            <a href="#" onclick="showPage('contact'); toggleMobileMenu()">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div>
+                        <h1>Welcome to Top Escrow</h1>
+                        <p>Our team of Escrow Professionals are ready to serve your escrow needs. We specialize in many types of complex escrows, such as:</p>
+                        <div class="service-slider-container">
+                            <div class="service-slider-wrapper">
+                                <div class="service-slider" id="serviceSlider">
+                                    <div class="service-slide">
+                                        <h3>Residential Resale</h3>
+                                        <p>Complete escrow handling for home sales with attention to detail and smooth closings.</p>
+                                    </div>
+                                    <div class="service-slide">
+                                        <h3>Refinance</h3>
+                                        <p>Professional refinance services with quick turnaround times and lender coordination.</p>
+                                    </div>
+                                    <div class="service-slide">
+                                        <h3>New Home Sales</h3>
+                                        <p>Specialized services for new construction with builder coordination and warranty transfers.</p>
+                                    </div>
+                                    <div class="service-slide">
+                                        <h3>Commercial</h3>
+                                        <p>Complex commercial transactions handled by experienced professionals with expertise.</p>
+                                    </div>
+                                    <div class="service-slide">
+                                        <h3>Bulk Sales</h3>
+                                        <p>Comprehensive services for bulk property transactions and portfolio sales management.</p>
+                                    </div>
+                                    <div class="service-slide">
+                                        <h3>Liquor License Transfer</h3>
+                                        <p>Specialized handling of liquor license transfers with regulatory compliance expertise.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-controls">
+                                <div class="slider-arrow" onclick="prevSlide()" aria-label="Previous service">‹</div>
+                                <div class="slider-dots" id="sliderDots">
+                                    <span class="slider-dot active" onclick="goToSlide(0)" aria-label="Service 1"></span>
+                                    <span class="slider-dot" onclick="goToSlide(1)" aria-label="Service 2"></span>
+                                    <span class="slider-dot" onclick="goToSlide(2)" aria-label="Service 3"></span>
+                                    <span class="slider-dot" onclick="goToSlide(3)" aria-label="Service 4"></span>
+                                    <span class="slider-dot" onclick="goToSlide(4)" aria-label="Service 5"></span>
+                                    <span class="slider-dot" onclick="goToSlide(5)" aria-label="Service 6"></span>
+                                </div>
+                                <div class="slider-arrow" onclick="nextSlide()" aria-label="Next service">›</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image-container">
+                        <img src="assets/images/HousesTopEscrow.png" alt="Top Escrow Houses" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="services-hero">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3rem;">
+                    Experienced professionals committed to delivering uncompromising service achieves impeccable results.
+                </p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="assets/images/ResidentialCard.svg" alt="Residential Resale" style="width: 100%; height: 100px; object-fit: contain; border-radius: 8px; margin: 0 auto 1rem; display: block;">
+                        <h3>Residential Resale</h3>
+                        <p style="font-size: 0.875rem; opacity: 0.9;">Top Escrow is a licensed independently owned escrow company. We are licensed by the Department of Business Oversight.</p>
+                    </div>
+                    <div class="service-card">
+                        <div style="height: 80px; background: rgba(255,255,255,0.2); border-radius: 8px; margin-bottom: 1rem;"></div>
+                        <h3>Refinance</h3>
+                        <p style="font-size: 0.875rem; opacity: 0.9;">Professional handling of refinance transactions with attention to detail and timely processing.</p>
+                    </div>
+                    <div class="service-card">
+                        <div style="height: 80px; background: rgba(255,255,255,0.2); border-radius: 8px; margin-bottom: 1rem;"></div>
+                        <h3>Commercial</h3>
+                        <p style="font-size: 0.875rem; opacity: 0.9;">Expert handling of commercial real estate transactions of all sizes.</p>
+                    </div>
+                    <div class="service-card">
+                        <div style="height: 80px; background: rgba(255,255,255,0.2); border-radius: 8px; margin-bottom: 1rem;"></div>
+                        <h3>Bulk Sales</h3>
+                        <p style="font-size: 0.875rem; opacity: 0.9;">Comprehensive services for bulk property transactions and portfolio sales.</p>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn" onclick="showPage('services')">More Services</a>
+            </div>
+        </section>
+
+        <!-- FAQ Bubble Section -->
+        <section class="faq-bubble-section">
+            <div class="container">
+                <div class="faq-bubble-container">
+                    <div class="faq-bubble">
+                        <div class="faq-bubble-content">
+                            <div class="faq-bubble-header">
+                                <img src="assets/images/FAQTopEscrow.png" alt="FAQ" class="faq-bubble-icon">
+                                <h2>Frequently Asked Questions</h2>
+                                <p>Quick answers to common escrow questions</p>
+                            </div>
+                            
+                            <div class="faq-bubble-items">
+                                <div class="faq-item">
+                                    <button class="faq-question" onclick="toggleFAQ(0)">
+                                        <span>Can I cancel an escrow agreement?</span>
+                                        <span class="faq-toggle">→</span>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>Yes, an escrow agreement can typically be cancelled if both parties agree or under specific circumstances outlined in the purchase agreement. However, there may be cancellation fees and the earnest money deposit handling will depend on the terms of the agreement and the reason for cancellation.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <button class="faq-question" onclick="toggleFAQ(1)">
+                                        <span>How long can funds remain in escrow?</span>
+                                        <span class="faq-toggle">→</span>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>The duration funds remain in escrow depends on the type of transaction. For residential sales, it's typically 30-45 days. For commercial transactions, it can be 60-90 days or longer. Refinances are usually shorter, around 30 days.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <button class="faq-question" onclick="toggleFAQ(2)">
+                                        <span>What actions should be avoided during the escrow process?</span>
+                                        <span class="faq-toggle">→</span>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>During escrow, avoid: making large purchases or taking on new debt, changing jobs or income sources, moving large sums of money without documenting the source, making major changes to your credit profile, and failing to respond promptly to requests for documentation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steps Section -->
+        <section class="steps-section">
+            <div class="steps-container">
+                <div class="steps-header">
+                    <h2>Our Escrow Process</h2>
+                    <p class="steps-subtitle">Follow our streamlined process designed to make your escrow experience smooth and transparent from start to finish.</p>
+                </div>
+                
+                <div class="steps-image-container">
+                    <img src="assets/images/TopEscrowSteps.svg" alt="Top Escrow Process Steps" class="steps-image">
+                </div>
+                
+                <div class="steps-cta">
+                    <p>Ready to begin your escrow process with our experienced team?</p>
+                    <a href="#" class="btn" onclick="showPage('contact')">Start Your Escrow</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page">
+        <section class="services-hero">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Our Services</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9;">Comprehensive escrow services for all your real estate needs</p>
+            </div>
+        </section>
+
+        <section class="section" style="background: white;">
+            <div class="container">
+                <div style="display: grid; gap: 2rem;">
+                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Residential Resale</h2>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Top Escrow is a licensed independently owned escrow company. We are licensed by the Department of Business Oversight. Our residential resale services include complete escrow handling from opening to closing, ensuring smooth transactions for buyers and sellers.</p>
+                        <ul style="list-style: none;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Document preparation and review</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title insurance coordination</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Funds handling and disbursement</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Recording and closing services</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Refinance</h2>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Professional handling of refinance transactions with attention to detail and timely processing. We work closely with lenders and borrowers to ensure smooth refinance closings.</p>
+                        <ul style="list-style: none;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Loan document preparation</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Payoff coordination</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title and escrow services</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Quick turnaround times</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">New Home Sales</h2>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Specialized services for new construction and development projects. We understand the unique requirements of new home transactions and builder relationships.</p>
+                        <ul style="list-style: none;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Builder coordination</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>HOA documentation</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Warranty transfers</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Construction lien releases</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Commercial</h2>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Expert handling of commercial real estate transactions of all sizes. From small office buildings to large commercial complexes, we have the expertise to handle complex commercial escrows.</p>
+                        <ul style="list-style: none;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Due diligence coordination</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Environmental report handling</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Commercial loan documentation</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Multi-party transaction management</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Bulk Sales</h2>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Comprehensive services for bulk property transactions and portfolio sales. We manage complex multi-property transactions with precision and efficiency.</p>
+                        <ul style="list-style: none;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Portfolio analysis</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Multiple property coordination</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Investor relations</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Bulk closing management</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Liquor License Transfer</h2>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">Specialized escrow services for liquor license transfers and business sales. We understand the regulatory requirements and work with all parties to ensure compliance.</p>
+                        <ul style="list-style: none;">
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>ABC coordination</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>License transfer documentation</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Business asset handling</li>
+                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Regulatory compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-hero">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Start Your Escrow?</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 1.5rem; opacity: 0.9;">Contact our experienced team today to discuss your escrow needs.</p>
+                <a href="#" class="btn" onclick="showPage('contact')">Contact Us</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="services-hero">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">About Top Escrow</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9;">Your trusted partner in professional escrow services</p>
+            </div>
+        </section>
+
+        <section class="section" style="background: white;">
+            <div class="container">
+                <div class="about-main-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                    <div>
+                        <h2 style="font-size: 2rem; font-weight: bold; color: #4364A1; margin-bottom: 1.5rem;">Who We Are</h2>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">
+                            Top Escrow is a licensed independently owned escrow company. We are licensed by the Department of Business Oversight and committed to providing exceptional escrow services for all types of real estate transactions.
+                        </p>
+                        <p style="color: #6b7280; margin-bottom: 2rem;">
+                            Our team of experienced escrow professionals brings years of expertise to every transaction, ensuring that your escrow process is handled with the utmost care and attention to detail.
+                        </p>
+
+                        <h3 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Our Mission</h3>
+                        <p style="color: #6b7280; margin-bottom: 2rem;">
+                            To provide exceptional escrow services with uncompromising attention to detail and customer service excellence. We strive to make every escrow transaction smooth, efficient, and stress-free for all parties involved.
+                        </p>
+
+                        <h3 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Why Choose Top Escrow?</h3>
+                        <div class="about-features-grid" style="display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important;">
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Licensed & Regulated</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Licensed by the Department of Business Oversight, ensuring compliance with all state regulations.</p>
+                            </div>
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Experienced Team</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Our escrow professionals have years of experience handling complex transactions.</p>
+                            </div>
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Multilingual Service</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">We serve clients in multiple languages to ensure clear communication.</p>
+                            </div>
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Technology Driven</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">We use the latest technology to streamline processes and improve efficiency.</p>
+                            </div>
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Fast Turnaround</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Quick processing times to meet your closing deadlines and transaction schedules.</p>
+                            </div>
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Transparent Communication</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Regular updates and clear communication throughout the entire escrow process.</p>
+                            </div>
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Competitive Rates</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Fair and competitive pricing with no hidden fees or surprise charges.</p>
+                            </div>
+                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Local Expertise</h4>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Deep knowledge of local real estate markets and regulatory requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="background: #f9fafb; padding: 1rem; border-radius: 8px;">
+                            <h3 style="font-size: 1rem; font-weight: bold; color: #4364A1; margin-bottom: 0.75rem;">Languages We Speak</h3>
+                            <div style="display: flex; flex-direction: column; gap: 0.375rem;">
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">English</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Spanish</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Mandarin</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Cantonese</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Korean</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Vietnamese</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Tagalog</div>
+                            </div>
+                        </div>
+
+                        <div style="background: #f9fafb; padding: 1rem; border-radius: 8px;">
+                            <h3 style="font-size: 1rem; font-weight: bold; color: #4364A1; margin-bottom: 0.75rem;">Our Specialties</h3>
+                            <div style="display: flex; flex-direction: column; gap: 0.375rem;">
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Residential Resale</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Refinance</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">New Home Sales</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Commercial</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Bulk Sales</div>
+                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Liquor License Transfer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #f9fafb; padding: 4rem 0;">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2 style="font-size: 2rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Our Team</h2>
+                    <p style="color: #6b7280; margin-bottom: 3rem;">Meet the experienced professionals who make your escrow process seamless.</p>
+                    
+                    <!-- Office Locations & Team -->
+                    <div style="display: flex; flex-direction: column; gap: 3rem;">
+                        
+                        <!-- Office Location Headers -->
+                        <div class="about-office-headers" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem;">
+                            <div id="office-los-angeles" onclick="filterTeamByOffice('Los Angeles')" style="text-align: center; padding: 1.5rem; background: rgba(67, 100, 161, 0.1); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;">
+                                <h3 style="font-size: 1.25rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Main Office</h3>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Los Angeles</p>
+                                <p style="color: #4364A1; font-weight: 600; margin-top: 0.5rem;">5 Team Members</p>
+                                <p style="color: #6b7280; font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">Click to filter</p>
+                            </div>
+                            <div id="office-granada-hills" onclick="filterTeamByOffice('Granada Hills')" style="text-align: center; padding: 1.5rem; background: rgba(67, 100, 161, 0.1); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;">
+                                <h3 style="font-size: 1.25rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Granada Hills Office</h3>
+                                <p style="color: #6b7280; font-size: 0.875rem;">San Fernando Valley</p>
+                                <p style="color: #4364A1; font-weight: 600; margin-top: 0.5rem;">1 Team Member</p>
+                                <p style="color: #6b7280; font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">Click to filter</p>
+                            </div>
+                            <div id="office-diamond-bar" onclick="filterTeamByOffice('Diamond Bar')" style="text-align: center; padding: 1.5rem; background: rgba(67, 100, 161, 0.1); border-radius: 12px; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;">
+                                <h3 style="font-size: 1.25rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Diamond Bar Office</h3>
+                                <p style="color: #6b7280; font-size: 0.875rem;">San Gabriel Valley</p>
+                                <p style="color: #f59e0b; font-weight: 600; margin-top: 0.5rem;">Team Coming Soon</p>
+                                <p style="color: #6b7280; font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.8;">Click to filter</p>
+                            </div>
+                        </div>
+
+                        <!-- All Team Members in 3x2 Grid -->
+                        <div class="about-team-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                            
+                            <!-- CEO - Granada Hills Office -->
+                            <div class="team-member" data-office="Granada Hills" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease;">
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Granada Hills</span>
+                                </div>
+                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Anne Cho</h4>
+                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">CEO</p>
+                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px;">
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> anne@topescrow.net</p>
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (555) 123-4567</p>
+                                </div>
+                            </div>
+
+                            <!-- Los Angeles Team -->
+                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease;">
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
+                                </div>
+                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Maria Rodriguez</h4>
+                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">VP/Senior Escrow Officer</p>
+                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px;">
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> maria@topescrow.com</p>
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (555) 234-5678</p>
+                                </div>
+                            </div>
+
+                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease;">
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
+                                </div>
+                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">David Chen</h4>
+                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Senior Escrow Officer</p>
+                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px;">
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> david@topescrow.com</p>
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (555) 234-5679</p>
+                                </div>
+                            </div>
+
+                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease;">
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
+                                </div>
+                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Sarah Kim</h4>
+                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Senior Escrow Officer</p>
+                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px;">
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> sarah@topescrow.com</p>
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (555) 234-5680</p>
+                                </div>
+                            </div>
+
+                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease;">
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
+                                </div>
+                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Michael Thompson</h4>
+                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Escrow Officer</p>
+                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px;">
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> michael@topescrow.com</p>
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (555) 234-5681</p>
+                                </div>
+                            </div>
+
+                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease;">
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
+                                </div>
+                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Lisa Nguyen</h4>
+                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Escrow Assistant</p>
+                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px;">
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> lisa@topescrow.com</p>
+                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (555) 234-5682</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Diamond Bar Coming Soon Notice -->
+                        <div class="diamond-bar-notice" style="background: rgba(245, 158, 11, 0.1); padding: 2rem; border-radius: 12px; border: 2px solid rgba(245, 158, 11, 0.2); text-align: center; max-width: 600px; margin: 0 auto; transition: all 0.3s ease;">
+                            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏗️</div>
+                            <h3 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Diamond Bar Office - Team Expansion</h3>
+                            <p style="color: #6b7280; margin-bottom: 1rem;">We're actively expanding our team at our Diamond Bar location to better serve the San Gabriel Valley area.</p>
+                            <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;"><strong>Current Status:</strong> Office operational with full support from our Los Angeles team</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Resources Page -->
+    <div id="resources" class="page">
+        <section class="services-hero">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Resources</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9;">Helpful links and resources for your escrow needs</p>
+            </div>
+        </section>
+
+        <section class="section" style="background: white;">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="background: #f9fafb; padding: 2rem; border-radius: 12px; border: 2px solid rgba(67, 100, 161, 0.1); margin-bottom: 2rem;">
+                        <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem; text-align: center;">Important Resources & Links</h2>
+                        <p style="color: #6b7280; text-align: center; margin-bottom: 2rem;">Below you'll find helpful resources and important links for your escrow process.</p>
+                        
+                        <!-- Quick Links -->
+                        <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #4364A1; margin-bottom: 2rem;">
+                            <h3 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Frequently Asked Questions</h3>
+                            <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">Find answers to common questions about our escrow services and process.</p>
+                            <button onclick="showPage('home'); setTimeout(() => document.getElementById('faq-section').scrollIntoView({behavior: 'smooth'}), 100);" 
+                                    style="background: #4364A1; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; font-size: 0.875rem; cursor: pointer; transition: background 0.3s ease;">
+                                View FAQ Section
+                            </button>
+                        </div>
+
+                        <!-- Resources will be added here by the client -->
+                        <div id="resources-list" style="display: grid; gap: 1rem;">
+                            <!-- Placeholder content - to be replaced with client's links -->
+                            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #4364A1;">
+                                <h3 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Sample Resource Link</h3>
+                                <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">Description of the resource or link will go here.</p>
+                                <a href="#" style="color: #4364A1; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;" target="_blank">
+                                    Visit Resource →
+                                </a>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #4364A1;">
+                                <h3 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Another Resource</h3>
+                                <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">Description of another resource or important link.</p>
+                                <a href="#" style="color: #4364A1; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem;" target="_blank">
+                                    Visit Resource →
+                                </a>
+                            </div>
+                            
+                            <!-- More resources can be added here -->
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                            <p style="color: #6b7280; font-size: 0.875rem;">Need help finding something? <a href="#" onclick="showPage('contact')" style="color: #4364A1; text-decoration: none; font-weight: 500;">Contact us</a> for assistance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section class="contact-section">
+            <div class="contact-form-section">
+                <div class="contact-container">
+                <h1>Contact Us</h1>
+                
+                <div class="contact-icons">
+                    <img src="assets/images/EmailIcon.png" alt="Email" class="contact-icon">
+                    <img src="assets/images/CallIcon.png" alt="Phone" class="contact-icon">
+                </div>
+
+                <div class="contact-form">
+                    <h2>Request Consultation</h2>
+                    
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-grid">
+                            <input 
+                                type="text" 
+                                name="firstName" 
+                                placeholder="First Name *" 
+                                class="form-input" 
+                                required
+                            >
+                            <input 
+                                type="text" 
+                                name="lastName" 
+                                placeholder="Last Name *" 
+                                class="form-input" 
+                                required
+                            >
+                        </div>
+
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Email Address *" 
+                            class="form-input" 
+                            required
+                            style="margin-bottom: 1.5rem;"
+                        >
+
+                        <input 
+                            type="tel" 
+                            name="phone" 
+                            placeholder="Phone Number (Optional)" 
+                            class="form-input"
+                            style="margin-bottom: 1.5rem;"
+                        >
+
+                        <textarea 
+                            name="message" 
+                            placeholder="Tell us about your escrow needs..." 
+                            class="form-textarea" 
+                            required
+                            maxlength="500"
+                        ></textarea>
+                        <div class="character-count">
+                            <span id="charCount">0</span>/500 characters
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div style="height: 2px; background: linear-gradient(to right, transparent, #4364A1, transparent); margin: 2rem auto; max-width: 300px;"></div>
+
+            <!-- Office Locations Section -->
+            <section class="offices-section">
+                <div class="container">
+                    <div style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: #f9fafb; border-radius: 12px; border: 2px solid #4364A1;">
+                        <h2 style="font-size: 2.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Visit Our Office Locations</h2>
+                        <p style="font-size: 1.125rem; color: #6b7280; max-width: 600px; margin: 0 auto;">
+                            We have three convenient locations to serve you better. Click on any office below to view the map and get directions.
+                        </p>
+                    </div>
+                    
+                    <div class="offices-grid">
+                        <!-- Office 1 -->
+                        <div class="office-card">
+                            <div class="office-map-container" onclick="openMaps('3600 Wilshire Blvd Suite 914 Los Angeles CA 90010')" style="position: relative; cursor: pointer;">
+                                <iframe 
+                                    class="office-map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8!2d-118.3087!3d34.0614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8f5b3f5b3f5%3A0x1234567890123456!2s3600%20Wilshire%20Blvd%20%23914%2C%20Los%20Angeles%2C%20CA%2090010!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus"
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    style="pointer-events: none;">
+                                </iframe>
+                                <div style="position: absolute; top: 10px; right: 10px; background: rgba(67, 100, 161, 0.9); color: white; padding: 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 500;">
+                                    Click for directions
+                                </div>
+                            </div>
+                            <div class="office-info">
+                                <h3 class="office-title">Main Office - Los Angeles</h3>
+                                <div class="office-address">
+                                    3600 Wilshire Blvd., Suite 914<br>
+                                    Los Angeles, CA 90010<br>
+                                    
+                                </div>
+                                <div class="office-contact">
+                                    <div class="contact-item">
+                                        <strong>Phone:</strong> (213) 320-1099
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>EFax:</strong> (213) 290-5050
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Hours:</strong> Mon-Fri 9:00 AM - 5:00 PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Office 2 -->
+                        <div class="office-card">
+                            <div class="office-map-container" onclick="openMaps('10723 White Oak Avenue Granada Hills CA 91344')" style="position: relative; cursor: pointer;">
+                                <iframe 
+                                    class="office-map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.2!2d-118.5081!3d34.3089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c28c1234567890%3A0x1234567890123456!2s10723%20White%20Oak%20Ave%2C%20Granada%20Hills%2C%20CA%2091344!5e0!3m2!1sen!2sus!4v1640995200001!5m2!1sen!2sus"
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    style="pointer-events: none;">
+                                </iframe>
+                                <div style="position: absolute; top: 10px; right: 10px; background: rgba(67, 100, 161, 0.9); color: white; padding: 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 500;">
+                                    Click for directions
+                                </div>
+                            </div>
+                            <div class="office-info">
+                                <h3 class="office-title">Granada Hills Office</h3>
+                                <div class="office-address">
+                                    10723 White Oak Avenue<br>
+                                    Granada Hills, CA 91344<br>
+                                
+                                </div>
+                                <div class="office-contact">
+                                    <div class="contact-item">
+                                        <strong>Phone:</strong> (818) 453-6128
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>EFax:</strong> (818) 527-6920
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Hours:</strong> Mon-Fri 9:00 AM - 5:00 PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Office 3 -->
+                        <div class="office-card">
+                            <div class="office-map-container" onclick="openMaps('3333 S Brea Canyon Rd Suite 111 Diamond Bar CA 91765')" style="position: relative; cursor: pointer;">
+                                <iframe 
+                                    class="office-map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.1!2d-117.8103!3d34.0287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3346789abcdef%3A0x1234567890123456!2s3333%20S%20Brea%20Canyon%20Rd%20%23111%2C%20Diamond%20Bar%2C%20CA%2091765!5e0!3m2!1sen!2sus!4v1640995200002!5m2!1sen!2sus"
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    style="pointer-events: none;">
+                                </iframe>
+                                <div style="position: absolute; top: 10px; right: 10px; background: rgba(67, 100, 161, 0.9); color: white; padding: 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 500;">
+                                    Click for directions
+                                </div>
+                            </div>
+                            <div class="office-info">
+                                <h3 class="office-title">Diamond Bar Office</h3>
+                                <div class="office-address">
+                                    3333 S. Brea Canyon Rd. Ste 111<br>
+                                    Diamond Bar, CA 91765<br>
+                                
+                                </div>
+                                <div class="office-contact">
+                                    <div class="contact-item">
+                                        <strong>Phone:</strong> (626) 884-3008
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>EFax:</strong> (626) 691-9778
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Hours:</strong> Mon-Fri 9:00 AM - 5:00 PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-modal-content">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>Your consultation request has been submitted successfully.</p>
+            
+            <div class="success-details">
+                <h4>What happens next:</h4>
+                <ul>
+                    <li>Our escrow specialist will review your request</li>
+                    <li>We'll contact you within 24 hours</li>
+                    <li>We'll discuss your specific escrow needs and timeline</li>
+                </ul>
+            </div>
+            
+            <p style="margin-bottom: 2rem;">We look forward to helping you with your escrow process!</p>
+            
+            <button class="success-close-btn" onclick="closeSuccessModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="help-modal">
+        <div class="help-modal-content">
+            <div class="help-icon">?</div>
+            <h3>How can we help you?</h3>
+            <p>Choose one of the options below to get the assistance you need.</p>
+            
+            <div class="help-options">
+                <button class="help-option-btn" onclick="emailSupport()">
+                    ✉️ Email Support for Questions
+                </button>
+                <button class="help-option-btn secondary" onclick="requestConsultation()">
+                    📋 Request Consultation
+                </button>
+            </div>
+            
+            <button class="help-close-btn" onclick="closeHelpModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Office Locations -->
+                <div class="footer-offices">
+                    <div class="footer-office">
+                        <h4>Main Office - Los Angeles</h4>
+                        <p>3600 Wilshire Blvd., Suite 914<br>Los Angeles, CA 90010</p>
+                        <div class="footer-contact">
+                            <p>📞 (213) 320-1099</p>
+                            <p>📠 (213) 290-5050</p>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-office">
+                        <h4>Granada Hills Office</h4>
+                        <p>10723 White Oak Avenue<br>Granada Hills, CA 91344</p>
+                        <div class="footer-contact">
+                            <p>📞 (818) 453-6128</p>
+                            <p>📠 (818) 527-6920</p>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-office">
+                        <h4>Diamond Bar Office</h4>
+                        <p>3333 S. Brea Canyon Rd. Ste 111<br>Diamond Bar, CA 91765</p>
+                        <div class="footer-contact">
+                            <p>📞 (626) 884-3008</p>
+                            <p>📠 (626) 691-9778</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Info Section -->
+                <div class="footer-contact-section">
+                    <h4>Contact Information</h4>
+                    <div class="footer-contact-grid">
+                        <div>
+                            <h5>Business Hours</h5>
+                            <p>Monday-Friday: 9:00 AM - 5:00 PM<br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Top Escrow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Help Button -->
+    <button class="help-btn" onclick="showHelp()">?</button>
+
+    <script>
+        // Page Navigation
+        function showPage(pageName) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageName).classList.add('active');
+            
+            // Update page title based on current page
+            const pageTitles = {
+                'home': 'Top Escrow - Professional Escrow Services',
+                'about': 'About Us - Top Escrow',
+                'services': 'Services - Top Escrow',
+                'contact': 'Contact Us - Top Escrow',
+                'resources': 'Resources - Top Escrow'
+            };
+            document.title = pageTitles[pageName] || 'Top Escrow - Professional Escrow Services';
+            
+            // Update nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Find and activate current nav link
+            const currentLink = document.querySelector(`[onclick="showPage('${pageName}')"]`);
+            if (currentLink) {
+                currentLink.classList.add('active');
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(index) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const currentItem = faqItems[index];
+            const answer = currentItem.querySelector('.faq-answer');
+            const toggle = currentItem.querySelector('.faq-toggle');
+            
+            // Close all other FAQs
+            faqItems.forEach((item, i) => {
+                if (i !== index) {
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '→';
+                }
+            });
+            
+            // Toggle current FAQ
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                toggle.textContent = '→';
+            } else {
+                answer.classList.add('active');
+                toggle.textContent = '−';
+            }
+        }
+
+        // Character Counter
+        function updateCharacterCount() {
+            const textarea = document.querySelector('textarea[name="message"]');
+            const charCount = document.getElementById('charCount');
+            const characterCountDiv = document.querySelector('.character-count');
+            
+            if (textarea && charCount) {
+                const currentLength = textarea.value.length;
+                charCount.textContent = currentLength;
+                
+                // Remove all classes first
+                characterCountDiv.classList.remove('warning', 'limit');
+                
+                // Add appropriate class based on character count
+                if (currentLength >= 450) {
+                    characterCountDiv.classList.add('limit');
+                } else if (currentLength >= 400) {
+                    characterCountDiv.classList.add('warning');
+                }
+            }
+        }
+
+        // Add event listener when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const textarea = document.querySelector('textarea[name="message"]');
+            if (textarea) {
+                textarea.addEventListener('input', updateCharacterCount);
+            }
+        });
+
+        // Contact Form Submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+            
+            // Basic validation
+            if (!data.firstName || !data.lastName || !data.email || !data.message) {
+                alert('Please fill in all required fields (First Name, Last Name, Email, and Message).');
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success modal
+                showSuccessModal(data.firstName, data.lastName, data.email, data.phone);
+                
+                // Reset form
+                event.target.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+                
+                // Reset character count
+                updateCharacterCount();
+            }, 2000);
+        }
+
+        // Success Modal Functions
+        function showSuccessModal(firstName, lastName, email, phone) {
+            const modal = document.getElementById('successModal');
+            
+            // Update the contact info in the modal
+            const contactInfo = phone ? `${email} or ${phone}` : email;
+            const contactLine = modal.querySelector('.success-details ul li:nth-child(2)');
+            contactLine.textContent = `We'll contact you within 24 hours at ${contactInfo}`;
+            
+            // Show modal with animation
+            modal.classList.add('active');
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal');
+            modal.classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const successModal = document.getElementById('successModal');
+            const helpModal = document.getElementById('helpModal');
+            
+            if (event.target === successModal) {
+                closeSuccessModal();
+            }
+            
+            if (event.target === helpModal) {
+                closeHelpModal();
+            }
+        });
+
+        // Help Modal Functions
+        function showHelp() {
+            const modal = document.getElementById('helpModal');
+            modal.classList.add('active');
+        }
+
+        function closeHelpModal() {
+            const modal = document.getElementById('helpModal');
+            modal.classList.remove('active');
+        }
+
+        function emailSupport() {
+            // Create mailto link with pre-filled subject
+            const email = 'info@topescrow.com';
+            const subject = 'Escrow Support Question';
+            const body = 'Hello Top Escrow team,\n\nI have a question about:\n\n\nThank you,\n';
+            
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+            
+            closeHelpModal();
+        }
+
+        function requestConsultation() {
+            closeHelpModal();
+            showPage('contact');
+            
+            // Scroll to the contact form
+            setTimeout(() => {
+                const contactForm = document.querySelector('.contact-form');
+                if (contactForm) {
+                    contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100);
+        }
+
+        // Open Google Maps for directions
+        function openMaps(address) {
+            // Detect if user is on mobile device
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // For mobile devices, try to open the native Maps app
+                const encodedAddress = encodeURIComponent(address);
+                
+                // Try Google Maps app first, fallback to web
+                const googleMapsApp = `https://maps.google.com/maps?daddr=${encodedAddress}`;
+                const appleMapsApp = `http://maps.apple.com/?daddr=${encodedAddress}`;
+                
+                // Detect iOS for Apple Maps
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                    window.open(appleMapsApp, '_blank');
+                } else {
+                    window.open(googleMapsApp, '_blank');
+                }
+            } else {
+                // For desktop, open Google Maps in new tab
+                const encodedAddress = encodeURIComponent(address);
+                const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+                window.open(googleMapsUrl, '_blank');
+            }
+        }
+
+        // Team filtering functionality
+        let currentFilter = null;
+
+        function filterTeamByOffice(officeName) {
+            const teamMembers = document.querySelectorAll('.team-member');
+            const officeHeaders = document.querySelectorAll('[id^="office-"]');
+            const diamondBarNotice = document.querySelector('.diamond-bar-notice');
+            
+            // Immediate visual feedback - highlight clicked office
+            officeHeaders.forEach(header => {
+                const headerId = header.id;
+                let isSelected = false;
+                
+                // Match office names properly
+                if ((officeName === 'Los Angeles' && headerId === 'office-los-angeles') ||
+                    (officeName === 'Granada Hills' && headerId === 'office-granada-hills') ||
+                    (officeName === 'Diamond Bar' && headerId === 'office-diamond-bar')) {
+                    isSelected = true;
+                }
+                
+                if (isSelected) {
+                    // Immediately show selected state
+                    header.style.background = '#4364A1';
+                    header.style.borderColor = '#334388';
+                    header.style.transform = 'scale(1.05)';
+                    header.style.color = 'white';
+                    header.style.boxShadow = '0 4px 12px rgba(67, 100, 161, 0.3)';
+                    
+                    // Update text colors immediately - force white for contrast
+                    const h3 = header.querySelector('h3');
+                    const ps = header.querySelectorAll('p');
+                    if (h3) {
+                        h3.style.setProperty('color', 'white', 'important');
+                    }
+                    ps.forEach(p => {
+                        // Force all text to white except "Coming Soon" which should be yellow
+                        if (p.textContent.includes('Coming Soon')) {
+                            p.style.setProperty('color', '#fbbf24', 'important'); // bright yellow for visibility on blue
+                        } else {
+                            p.style.setProperty('color', 'rgba(255, 255, 255, 0.9)', 'important');
+                        }
+                    });
+                } else {
+                    // Dim other offices immediately
+                    header.style.background = 'rgba(67, 100, 161, 0.05)';
+                    header.style.borderColor = 'rgba(67, 100, 161, 0.2)';
+                    header.style.transform = 'none';
+                    header.style.color = '';
+                    header.style.boxShadow = 'none';
+                    
+                    // Reset text colors for unselected - force original colors
+                    const h3 = header.querySelector('h3');
+                    const ps = header.querySelectorAll('p');
+                    if (h3) {
+                        h3.style.setProperty('color', '#4364A1', 'important');
+                    }
+                    ps.forEach(p => {
+                        if (p.textContent.includes('Coming Soon')) {
+                            p.style.setProperty('color', '#f59e0b', 'important'); // orange for "Coming Soon"
+                        } else if (p.textContent.includes('Team Member')) {
+                            p.style.setProperty('color', '#4364A1', 'important'); // blue for team count
+                        } else {
+                            p.style.setProperty('color', '#6b7280', 'important'); // gray for other text
+                        }
+                    });
+                }
+            });
+            
+            // If clicking the same office again, show all
+            if (currentFilter === officeName) {
+                // Show all team members
+                teamMembers.forEach(member => {
+                    member.style.display = 'block';
+                    member.style.opacity = '1';
+                });
+                
+                // Show Diamond Bar notice
+                if (diamondBarNotice) {
+                    diamondBarNotice.style.display = 'block';
+                }
+                
+                // Reset office header styles
+                officeHeaders.forEach(header => {
+                    header.style.background = 'rgba(67, 100, 161, 0.1)';
+                    header.style.borderColor = 'transparent';
+                    header.style.transform = 'none';
+                    header.style.color = '';
+                    header.style.boxShadow = 'none';
+                    
+                    // Reset text colors
+                    const h3 = header.querySelector('h3');
+                    const ps = header.querySelectorAll('p');
+                    if (h3) h3.style.color = '#4364A1';
+                    ps.forEach(p => {
+                        if (p.style.fontWeight === '600') {
+                            if (p.textContent.includes('Coming Soon')) {
+                                p.style.color = '#f59e0b';
+                            } else {
+                                p.style.color = '#4364A1';
+                            }
+                        } else {
+                            p.style.color = '#6b7280';
+                        }
+                    });
+                });
+                
+                currentFilter = null;
+                return;
+            }
+            
+            // Filter team members
+            teamMembers.forEach(member => {
+                const memberOffice = member.getAttribute('data-office');
+                if (memberOffice === officeName) {
+                    member.style.display = 'block';
+                    member.style.opacity = '1';
+                    member.style.transform = 'scale(1.02)';
+                } else {
+                    member.style.display = 'none';
+                    member.style.opacity = '0.3';
+                    member.style.transform = 'none';
+                }
+            });
+            
+            // Handle Diamond Bar office (no employees)
+            if (officeName === 'Diamond Bar') {
+                // Hide all team members, show Diamond Bar notice
+                teamMembers.forEach(member => {
+                    member.style.display = 'none';
+                });
+                if (diamondBarNotice) {
+                    diamondBarNotice.style.display = 'block';
+                    diamondBarNotice.style.transform = 'scale(1.02)';
+                }
+            } else {
+                // Hide Diamond Bar notice when filtering other offices
+                if (diamondBarNotice) {
+                    diamondBarNotice.style.display = 'none';
+                }
+            }
+            
+            
+            currentFilter = officeName;
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+        
+        // Service Slider Functionality
+        let currentSlide = 0;
+        const totalSlides = 6;
+        let slideInterval;
+        
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            const slider = document.getElementById('serviceSlider');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            // Move slider
+            slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideIndex);
+            });
+            
+            // Reset auto-slide timer
+            resetAutoSlide();
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            goToSlide(currentSlide);
+        }
+        
+        function startAutoSlide() {
+            slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(slideInterval);
+            startAutoSlide();
+        }
+        
+        // Initialize slider when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            startAutoSlide();
+            
+            // Pause auto-slide on hover
+            const sliderContainer = document.querySelector('.service-slider-container');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                sliderContainer.addEventListener('mouseleave', startAutoSlide);
+            }
+        });
+    </script>
+</body>
+</html>
