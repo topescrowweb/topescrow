@@ -2319,40 +2319,78 @@
                         </div>
                     </div>
 
-                    <!-- Right Column - Office Locations Preview -->
+                    <!-- Right Column - Interactive Office Maps -->
                     <div>
-                        <div style="background: #f9fafb; padding: 2rem; border-radius: 12px; border: 2px solid #4364A1; height: fit-content;">
-                            <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1.5rem; text-align: center;">Our Office Locations</h2>
+                        <div style="background: #f9fafb; padding: 1.5rem; border-radius: 12px; border: 2px solid #4364A1;">
+                            <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1.5rem; text-align: center;">Visit Our Offices</h2>
                             
-                            <!-- Compact Office Cards -->
-                            <div style="display: flex; flex-direction: column; gap: 1rem;">
-                                <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                    <h3 style="font-size: 1rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Main Office - Los Angeles</h3>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">3600 Wilshire Blvd., Suite 914</p>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Los Angeles, CA 90010</p>
-                                    <p style="font-size: 0.875rem; color: #4364A1; font-weight: 500;">(213) 320-1099</p>
+                            <!-- Office Cards with Maps -->
+                            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <!-- Office 1 - Los Angeles -->
+                                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                    <div onclick="openMaps('3600 Wilshire Blvd Suite 914 Los Angeles CA 90010')" style="position: relative; cursor: pointer; height: 120px;">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8!2d-118.3087!3d34.0614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8f5b3f5b3f5%3A0x1234567890123456!2s3600%20Wilshire%20Blvd%20%23914%2C%20Los%20Angeles%2C%20CA%2090010!5e0!3m2!1sen!2sus!4v1640995200000!5m2!1sen!2sus"
+                                            style="width: 100%; height: 100%; border: none; pointer-events: none;"
+                                            allowfullscreen="" 
+                                            loading="lazy" 
+                                            referrerpolicy="no-referrer-when-downgrade">
+                                        </iframe>
+                                        <div style="position: absolute; top: 5px; right: 5px; background: rgba(67, 100, 161, 0.9); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 500;">
+                                            Click for directions
+                                        </div>
+                                    </div>
+                                    <div style="padding: 1rem;">
+                                        <h3 style="font-size: 0.9rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Main Office - Los Angeles</h3>
+                                        <p style="font-size: 0.8rem; color: #6b7280; margin-bottom: 0.25rem;">3600 Wilshire Blvd., Suite 914</p>
+                                        <p style="font-size: 0.8rem; color: #6b7280; margin-bottom: 0.25rem;">Los Angeles, CA 90010</p>
+                                        <p style="font-size: 0.8rem; color: #4364A1; font-weight: 500;">(213) 320-1099</p>
+                                    </div>
                                 </div>
-                                
-                                <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                    <h3 style="font-size: 1rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Branch Office - Artesia</h3>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">11403 South St., Suite B</p>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Artesia, CA 90701</p>
-                                    <p style="font-size: 0.875rem; color: #4364A1; font-weight: 500;">(562) 924-5003</p>
+
+                                <!-- Office 2 - Granada Hills -->
+                                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                    <div onclick="openMaps('10723 White Oak Avenue Granada Hills CA 91344')" style="position: relative; cursor: pointer; height: 120px;">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.2!2d-118.5081!3d34.3089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c28c1234567890%3A0x1234567890123456!2s10723%20White%20Oak%20Ave%2C%20Granada%20Hills%2C%20CA%2091344!5e0!3m2!1sen!2sus!4v1640995200001!5m2!1sen!2sus"
+                                            style="width: 100%; height: 100%; border: none; pointer-events: none;"
+                                            allowfullscreen="" 
+                                            loading="lazy" 
+                                            referrerpolicy="no-referrer-when-downgrade">
+                                        </iframe>
+                                        <div style="position: absolute; top: 5px; right: 5px; background: rgba(67, 100, 161, 0.9); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 500;">
+                                            Click for directions
+                                        </div>
+                                    </div>
+                                    <div style="padding: 1rem;">
+                                        <h3 style="font-size: 0.9rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Granada Hills Office</h3>
+                                        <p style="font-size: 0.8rem; color: #6b7280; margin-bottom: 0.25rem;">10723 White Oak Avenue</p>
+                                        <p style="font-size: 0.8rem; color: #6b7280; margin-bottom: 0.25rem;">Granada Hills, CA 91344</p>
+                                        <p style="font-size: 0.8rem; color: #4364A1; font-weight: 500;">(818) 453-6128</p>
+                                    </div>
                                 </div>
-                                
-                                <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                    <h3 style="font-size: 1rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Branch Office - Diamond Bar</h3>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">1220 S. Diamond Bar Blvd., Suite A</p>
-                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Diamond Bar, CA 91765</p>
-                                    <p style="font-size: 0.875rem; color: #4364A1; font-weight: 500;">(909) 861-7999</p>
+
+                                <!-- Office 3 - Diamond Bar -->
+                                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                    <div onclick="openMaps('3333 S Brea Canyon Rd Suite 111 Diamond Bar CA 91765')" style="position: relative; cursor: pointer; height: 120px;">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.1!2d-117.8103!3d34.0287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c3346789abcdef%3A0x1234567890123456!2s3333%20S%20Brea%20Canyon%20Rd%20%23111%2C%20Diamond%20Bar%2C%20CA%2091765!5e0!3m2!1sen!2sus!4v1640995200002!5m2!1sen!2sus"
+                                            style="width: 100%; height: 100%; border: none; pointer-events: none;"
+                                            allowfullscreen="" 
+                                            loading="lazy" 
+                                            referrerpolicy="no-referrer-when-downgrade">
+                                        </iframe>
+                                        <div style="position: absolute; top: 5px; right: 5px; background: rgba(67, 100, 161, 0.9); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 500;">
+                                            Click for directions
+                                        </div>
+                                    </div>
+                                    <div style="padding: 1rem;">
+                                        <h3 style="font-size: 0.9rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Diamond Bar Office</h3>
+                                        <p style="font-size: 0.8rem; color: #6b7280; margin-bottom: 0.25rem;">3333 S. Brea Canyon Rd. Ste 111</p>
+                                        <p style="font-size: 0.8rem; color: #6b7280; margin-bottom: 0.25rem;">Diamond Bar, CA 91765</p>
+                                        <p style="font-size: 0.8rem; color: #4364A1; font-weight: 500;">(626) 884-3008</p>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div style="text-align: center; margin-top: 1.5rem;">
-                                <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Click below to view detailed maps and get directions</p>
-                                <button onclick="document.getElementById('fullOffices').scrollIntoView({behavior: 'smooth'})" style="background: #4364A1; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 0.875rem;">
-                                    View Full Office Details
-                                </button>
                             </div>
                         </div>
                     </div>
