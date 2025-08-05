@@ -1623,6 +1623,12 @@
             .footer-contact-grid {
                 gap: 1rem;
             }
+
+            /* Contact page mobile responsiveness */
+            .contact-section .container > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
         }
     </style>
 </head>
@@ -2251,8 +2257,11 @@
         </section>
 
         <section class="contact-section">
-            <div class="contact-form-section">
-                <div class="contact-container">
+            <div class="container" style="max-width: 1200px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4rem;">
+                    <!-- Left Column - Contact Form -->
+                    <div class="contact-form-section">
+                        <div class="contact-container">
                 <div class="contact-form">
                     <h2>Request Consultation</h2>
                     
@@ -2306,25 +2315,52 @@
                             Submit
                         </button>
                     </form>
-                </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Office Locations Preview -->
+                    <div>
+                        <div style="background: #f9fafb; padding: 2rem; border-radius: 12px; border: 2px solid #4364A1; height: fit-content;">
+                            <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1.5rem; text-align: center;">Our Office Locations</h2>
+                            
+                            <!-- Compact Office Cards -->
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                    <h3 style="font-size: 1rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Main Office - Los Angeles</h3>
+                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">3600 Wilshire Blvd., Suite 914</p>
+                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Los Angeles, CA 90010</p>
+                                    <p style="font-size: 0.875rem; color: #4364A1; font-weight: 500;">(213) 320-1099</p>
+                                </div>
+                                
+                                <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                    <h3 style="font-size: 1rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Branch Office - Artesia</h3>
+                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">11403 South St., Suite B</p>
+                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Artesia, CA 90701</p>
+                                    <p style="font-size: 0.875rem; color: #4364A1; font-weight: 500;">(562) 924-5003</p>
+                                </div>
+                                
+                                <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                                    <h3 style="font-size: 1rem; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Branch Office - Diamond Bar</h3>
+                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">1220 S. Diamond Bar Blvd., Suite A</p>
+                                    <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 0.25rem;">Diamond Bar, CA 91765</p>
+                                    <p style="font-size: 0.875rem; color: #4364A1; font-weight: 500;">(909) 861-7999</p>
+                                </div>
+                            </div>
+                            
+                            <div style="text-align: center; margin-top: 1.5rem;">
+                                <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem;">Click below to view detailed maps and get directions</p>
+                                <button onclick="document.getElementById('fullOffices').scrollIntoView({behavior: 'smooth'})" style="background: #4364A1; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-weight: 500; cursor: pointer; font-size: 0.875rem;">
+                                    View Full Office Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Location Indicator -->
-            <div style="text-align: center; padding: 2rem 0 1rem 0; background: linear-gradient(to bottom, #f9fafb, white);">
-                <p style="color: #4364A1; font-size: 1.1rem; font-weight: 500; margin-bottom: 0.5rem;">
-                    ↓ See our office locations below ↓
-                </p>
-                <p style="color: #6b7280; font-size: 0.9rem;">
-                    Visit us at any of our three convenient locations
-                </p>
-            </div>
-
-            <!-- Divider -->
-            <!--<div style="height: 2px; background: linear-gradient(to right, transparent, #4364A1, transparent); margin: 2rem auto; max-width: 300px;"></div> -->
 
             <!-- Office Locations Section -->
-            <section class="offices-section">
+            <section class="offices-section" id="fullOffices">
                 <div class="container">
                     <div style="text-align: center; margin-bottom: 3rem; padding: 2rem; background: #f9fafb; border-radius: 12px; border: 2px solid #4364A1;">
                         <h2 style="font-size: 2.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Visit Our Office Locations</h2>
