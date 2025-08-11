@@ -1394,20 +1394,49 @@
                 max-width: 100% !important;
             }
 
-            /* Office Cards Mobile */
+            /* Office Cards Mobile - horizontal layout for each office */
             .offices-grid {
                 display: grid !important;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
-                gap: 1rem;
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
                 padding: 0 1rem;
                 max-width: 100%;
             }
             
-            .offices-grid > div:nth-child(3) {
-                grid-column: 1 / -1;
-                max-width: 50%;
-                margin: 0 auto;
+            /* Each office card displays map and info side by side */
+            .office-card {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+                align-items: start !important;
+                background: white !important;
+                padding: 1rem !important;
+                border-radius: 8px !important;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+            }
+            
+            .office-map-container {
+                height: 100px !important;
+            }
+            
+            .office-info {
+                padding: 0 !important;
+            }
+            
+            .office-title {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .office-address {
+                font-size: 0.8rem !important;
+                line-height: 1.3 !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .contact-item {
+                font-size: 0.75rem !important;
+                margin-bottom: 0.25rem !important;
             }
 
             .office-card {
@@ -1629,6 +1658,12 @@
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
             }
+            
+            /* Hide office preview maps on mobile */
+            .contact-section .container > div[style*="grid-template-columns"] > div:last-child {
+                display: none !important;
+            }
+            
 
             /* About Us main grid - stack vertically on mobile */
             .about-main-grid {
@@ -1662,6 +1697,19 @@
                 flex-direction: row !important;
                 flex-wrap: wrap !important;
                 gap: 0.5rem !important;
+            }
+
+            /* Services mobile "Show More" functionality */
+            #services-show-more {
+                display: block !important;
+            }
+            
+            .service-item:nth-child(n+4) {
+                display: none;
+            }
+            
+            .service-item.show-all:nth-child(n+4) {
+                display: block;
             }
         }
     </style>
@@ -1877,8 +1925,8 @@
 
         <section class="section" style="background: white;">
             <div class="container">
-                <div style="display: grid; gap: 2rem;">
-                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div id="services-container" style="display: grid; gap: 2rem;">
+                    <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Residential Resale</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We provide full-service escrow support for residential resale transactions, ensuring a smooth and secure experience for both buyers and sellers.</p>
                         <ul style="list-style: none;">
@@ -1895,7 +1943,7 @@
                         </ul>
                     </div>
 
-                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Refinance</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">Our refinance escrow services are designed for speed, precision, and compliance, supporting homeowners and lenders with seamless closings.</p>
                         <ul style="list-style: none;">
@@ -1909,7 +1957,7 @@
                         </ul>
                     </div>
 
-                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">New Home Sales</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We work closely with homebuilders, developers, and buyers to facilitate smooth closings for newly constructed properties. Our team understands the unique timelines and documentation requirements that come with new developments.</p>
                         <ul style="list-style: none;">
@@ -1923,7 +1971,7 @@
                             <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Final walkthrough coordination and closing</li>
                         </ul>
                     </div>
-                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Mobile & Manufactured Homes</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We’re experienced in handling escrow for both personal property and real property mobile home transactions, including those located in parks or on owned land.</p>
                         <ul style="list-style: none;">
@@ -1937,7 +1985,7 @@
                         </ul>
                     </div>                    
 
-                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Commercial</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We manage a variety of commercial transactions from multi-unit investments to office, retail, and industrial properties with the experience and detail needed for complex deals.</p>
                         <ul style="list-style: none;">
@@ -1951,7 +1999,7 @@
                         </ul>
                     </div>
 
-                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Bulk Sales & Business Transfers</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We support the escrow needs of business transactions, whether or not real property is involved, in compliance with California’s Bulk Sale Laws and UCC requirements.</p>
                         <ul style="list-style: none;">
@@ -1964,7 +2012,7 @@
                         </ul>
                     </div>
 
-                    <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Liquor License Transfer</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We provide specialized escrow services for transactions involving California liquor licenses, whether as part of a business sale or a standalone license transfer.</p>
                         <ul style="list-style: none;">
@@ -1976,6 +2024,13 @@
                             <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Guidance through regulatory timelines and requirements</li>
                         </ul>
                     </div>
+                </div>
+                
+                <!-- Show More Button for Mobile -->
+                <div id="services-show-more" style="display: none; text-align: center; margin-top: 2rem;">
+                    <button onclick="toggleServices()" style="background: #4364A1; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: background 0.3s ease;">
+                        <span id="show-more-text">Show More Services</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -3094,6 +3149,23 @@
                 sliderContainer.addEventListener('mouseleave', startAutoSlide);
             }
         });
+        
+        // Services Show More functionality
+        function toggleServices() {
+            const serviceItems = document.querySelectorAll('.service-item');
+            const showMoreText = document.getElementById('show-more-text');
+            const isExpanded = serviceItems[0].classList.contains('show-all');
+            
+            if (isExpanded) {
+                // Collapse - remove show-all class
+                serviceItems.forEach(item => item.classList.remove('show-all'));
+                showMoreText.textContent = 'Show More Services';
+            } else {
+                // Expand - add show-all class
+                serviceItems.forEach(item => item.classList.add('show-all'));
+                showMoreText.textContent = 'Show Less Services';
+            }
+        }
     </script>
 </body>
 </html>
