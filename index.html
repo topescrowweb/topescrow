@@ -1666,8 +1666,10 @@
             
 
             /* About Us main grid - stack vertically on mobile */
-            .about-main-grid {
-                --about-grid-cols: 1fr;
+            .about-main-grid,
+            div[style*="grid-template-columns: var(--about-grid-cols, 2fr 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
             }
 
             /* About Us languages and specialties mobile layout - card style like services */
