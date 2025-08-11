@@ -1672,18 +1672,28 @@
             }
             
 
-            /* About Us main grid - stack vertically on mobile */
-            .about-main-grid,
-            div[style*="grid-template-columns: 2fr 1fr"] {
+            /* About Us - hide desktop layout and show mobile layout */
+            .about-desktop-layout {
+                display: none !important;
+            }
+            
+            .about-mobile-layout {
+                display: block !important;
+            }
+
+            /* About Us - Force mobile layout by making grid single column */
+            .about-desktop-layout {
+                display: grid !important;
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
             }
-
-            /* About Us languages and specialties mobile layout - card style like services */
+            
+            /* Languages and specialties mobile card styling */
             .about-sidebar {
                 gap: 1.5rem !important;
                 flex-direction: column !important;
                 width: 100% !important;
+                margin-top: 2rem !important;
             }
             
             .about-sidebar > div {
@@ -2078,7 +2088,7 @@
 
         <section class="section" style="background: white;">
             <div class="container">
-                <div class="about-main-grid">
+                <div class="about-desktop-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
                     <div>
                         <h2 style="font-size: 2rem; font-weight: bold; color: #4364A1; margin-bottom: 1.5rem;">Who We Are</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">
