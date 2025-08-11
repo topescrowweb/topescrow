@@ -1670,33 +1670,43 @@
                 --about-grid-cols: 1fr;
             }
 
-            /* About Us languages and specialties mobile layout */
+            /* About Us languages and specialties mobile layout - card style like services */
             .about-sidebar {
-                gap: 1rem !important;
+                gap: 1.5rem !important;
             }
             
             .about-sidebar > div {
-                padding: 1rem !important;
+                background: #f9fafb !important;
+                padding: 1.5rem !important;
+                border-radius: 8px !important;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+                border-left: 4px solid #4364A1 !important;
             }
             
             .about-sidebar h3 {
-                font-size: 1rem !important;
-                margin-bottom: 0.75rem !important;
+                font-size: 1.25rem !important;
+                font-weight: bold !important;
+                color: #4364A1 !important;
+                margin-bottom: 1rem !important;
             }
             
-            /* Horizontal layout for language and specialty items on mobile */
+            /* Card-style layout for items */
+            .about-sidebar div[style*="flex-direction: column"] {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.75rem !important;
+            }
+            
             .about-sidebar .language-item,
             .about-sidebar .specialty-item {
-                padding: 0.5rem 0.75rem !important;
-                font-size: 0.8rem !important;
+                background: white !important;
+                padding: 0.75rem !important;
+                border-radius: 6px !important;
+                font-size: 0.875rem !important;
+                color: #4b5563 !important;
                 text-align: center !important;
-            }
-            
-            /* Make languages and specialties flex horizontally on mobile */
-            .about-sidebar div[style*="flex-direction: column"] {
-                flex-direction: row !important;
-                flex-wrap: wrap !important;
-                gap: 0.5rem !important;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+                border: 1px solid rgba(67, 100, 161, 0.1) !important;
             }
 
             /* Services mobile "Show More" functionality */
