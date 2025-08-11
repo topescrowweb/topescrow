@@ -514,7 +514,7 @@
         .contact-form-section {
             min-height: 40vh;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             padding: 2rem 0;
         }
@@ -1629,6 +1629,26 @@
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
             }
+
+            /* About Us languages and specialties mobile layout */
+            .about-sidebar {
+                gap: 1rem !important;
+            }
+            
+            .about-sidebar > div {
+                padding: 1rem !important;
+            }
+            
+            .about-sidebar h3 {
+                font-size: 1rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .about-sidebar .language-item,
+            .about-sidebar .specialty-item {
+                padding: 0.6rem !important;
+                font-size: 0.85rem !important;
+            }
         }
     </style>
 </head>
@@ -1988,63 +2008,53 @@
                         <p style="color: #6b7280; margin-bottom: 2rem;">
                             We don’t just close deals. We build trust, protect interests, and bring clarity to every step.
                         </p>
-                        <h3 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Why Choose Top Escrow?</h3>
-                        <div class="about-features-grid" style="display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important;">
-                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Licensed & Regulated</h4>
-                                <p style="color: #6b7280; font-size: 0.875rem;">Licensed by the Department of Business Oversight, ensuring compliance with all state regulations.</p>
-                            </div>
-                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Experienced Team</h4>
-                                <p style="color: #6b7280; font-size: 0.875rem;">Our escrow professionals have years of experience handling complex transactions.</p>
-                            </div>
-                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Multilingual Service</h4>
-                                <p style="color: #6b7280; font-size: 0.875rem;">We serve clients in multiple languages to ensure clear communication.</p>
-                            </div>
-                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Technology Driven</h4>
-                                <p style="color: #6b7280; font-size: 0.875rem;">We use the latest technology to streamline processes and improve efficiency.</p>
-                            </div>
-                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Fast Turnaround</h4>
-                                <p style="color: #6b7280; font-size: 0.875rem;">Quick processing times to meet your closing deadlines and transaction schedules.</p>
-                            </div>
-                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Transparent Communication</h4>
-                                <p style="color: #6b7280; font-size: 0.875rem;">Regular updates and clear communication throughout the entire escrow process.</p>
-                            </div>
-                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Competitive Rates</h4>
-                                <p style="color: #6b7280; font-size: 0.875rem;">Fair and competitive pricing with no hidden fees or surprise charges.</p>
-                            </div>
-                            <div style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4364A1;">
-                                <h4 style="font-weight: 600; color: #4364A1; margin-bottom: 0.5rem;">Local Expertise</h4>
-                                <p style="color: #6b7280; font-size: 0.875rem;">Deep knowledge of local real estate markets and regulatory requirements.</p>
-                            </div>
+                        <h3 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Why Top Escrow?</h3>
+                        <div style="background: #f9fafb; padding: 2rem; border-radius: 8px; border-left: 4px solid #4364A1;">
+                            <ul style="list-style: none; margin: 0; padding: 0;">
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; color: #6b7280; font-size: 1rem; line-height: 1.6;">
+                                    <span style="color: #4364A1; margin-right: 0.75rem; font-weight: bold; flex-shrink: 0;">✓</span>
+                                    <span>Independently owned and DFPI licensed</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; color: #6b7280; font-size: 1rem; line-height: 1.6;">
+                                    <span style="color: #4364A1; margin-right: 0.75rem; font-weight: bold; flex-shrink: 0;">✓</span>
+                                    <span>Transparent, neutral, and secure handling of every transaction</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; color: #6b7280; font-size: 1rem; line-height: 1.6;">
+                                    <span style="color: #4364A1; margin-right: 0.75rem; font-weight: bold; flex-shrink: 0;">✓</span>
+                                    <span>Advanced technology with e-sign, remote signings, and secure wire transfers</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 1rem; color: #6b7280; font-size: 1rem; line-height: 1.6;">
+                                    <span style="color: #4364A1; margin-right: 0.75rem; font-weight: bold; flex-shrink: 0;">✓</span>
+                                    <span>Exceptional communication and responsiveness</span>
+                                </li>
+                                <li style="display: flex; align-items: flex-start; margin-bottom: 0; color: #6b7280; font-size: 1rem; line-height: 1.6;">
+                                    <span style="color: #4364A1; margin-right: 0.75rem; font-weight: bold; flex-shrink: 0;">✓</span>
+                                    <span>Trusted by real estate professionals, lenders, and developers across California</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div class="about-sidebar" style="display: flex; flex-direction: column; gap: 1.5rem;">
                         <div style="background: #f9fafb; padding: 1rem; border-radius: 8px;">
                             <h3 style="font-size: 1rem; font-weight: bold; color: #4364A1; margin-bottom: 0.75rem;">Languages We Speak</h3>
                             <div style="display: flex; flex-direction: column; gap: 0.375rem;">
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">English</div>
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Korean</div>
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Spanish</div>                                
+                                <div class="language-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">English</div>
+                                <div class="language-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Korean</div>
+                                <div class="language-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Spanish</div>                                
                             </div>
                         </div>
 
                         <div style="background: #f9fafb; padding: 1rem; border-radius: 8px;">
                             <h3 style="font-size: 1rem; font-weight: bold; color: #4364A1; margin-bottom: 0.75rem;">Our Specialties</h3>
                             <div style="display: flex; flex-direction: column; gap: 0.375rem;">
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Residential Resale</div>
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Refinance</div>
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">New Home Sales</div>
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Mobile & Manufactured Homes</div>                              
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Commercial</div>
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Bulk Sales & Business Transfers</div>
-                                <div style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Liquor License Transfers</div>
+                                <div class="specialty-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Residential Resale</div>
+                                <div class="specialty-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Refinance</div>
+                                <div class="specialty-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">New Home Sales</div>
+                                <div class="specialty-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Mobile & Manufactured Homes</div>                              
+                                <div class="specialty-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Commercial</div>
+                                <div class="specialty-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Bulk Sales & Business Transfers</div>
+                                <div class="specialty-item" style="background: white; padding: 0.5rem; border-radius: 4px; font-size: 0.8rem; color: #4b5563;">Liquor License Transfers</div>
                             </div>
                         </div>
                     </div>
@@ -2207,17 +2217,19 @@
                         <p style="color: #6b7280; text-align: center; margin-bottom: 2rem;">Below you'll find helpful resources and important links for your escrow process.</p>
                         
                         <!-- Quick Links -->
-                        <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #4364A1; margin-bottom: 2rem;">
-                            <h3 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Frequently Asked Questions</h3>
-                            <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">Find answers to common questions about our escrow services and process.</p>
-                            <button onclick="showPage('home'); setTimeout(() => document.getElementById('faq-section').scrollIntoView({behavior: 'smooth'}), 100);" 
-                                    style="background: #4364A1; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; font-size: 0.875rem; cursor: pointer; transition: background 0.3s ease;">
-                                View FAQ Section
-                            </button>
-                        </div>
+                        <!-- All resources including FAQ with consistent spacing -->
+                        <div id="resources-list" style="display: grid; gap: 1.5rem;">
+                            <!-- FAQ Section -->
+                            <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #4364A1;">
+                                <h3 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Frequently Asked Questions</h3>
+                                <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">Find answers to common questions about our escrow services and process.</p>
+                                <button onclick="showPage('home'); setTimeout(() => document.getElementById('faq-section').scrollIntoView({behavior: 'smooth'}), 100);" 
+                                        style="background: #4364A1; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; font-size: 0.875rem; cursor: pointer; transition: background 0.3s ease;">
+                                    View FAQ Section
+                                </button>
+                            </div>
 
-                        <!-- Resources will be added here by the client -->
-                        <div id="resources-list" style="display: grid; gap: 1rem;">
+                            <!-- Resources will be added here by the client -->
                             <!-- Placeholder content - to be replaced with client's links -->
                             <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 4px solid #4364A1;">
                                 <h3 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Sample Resource Link</h3>
