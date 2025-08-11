@@ -1715,6 +1715,20 @@
             
             /* Card-style layout for items */
             .about-sidebar div[style*="flex-direction: column"] {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+            
+            /* Languages section - stack vertically */
+            .about-sidebar > div:first-child div[style*="flex-direction: column"] {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+            
+            /* Specialties section - keep 2-column grid */
+            .about-sidebar > div:last-child div[style*="flex-direction: column"] {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
                 gap: 0.75rem !important;
