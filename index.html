@@ -516,7 +516,7 @@
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            padding: 2rem 0;
+            padding: 0 0 2rem 0;
         }
 
         .contact-container {
@@ -1644,10 +1644,19 @@
                 margin-bottom: 0.75rem !important;
             }
             
+            /* Horizontal layout for language and specialty items on mobile */
             .about-sidebar .language-item,
             .about-sidebar .specialty-item {
-                padding: 0.6rem !important;
-                font-size: 0.85rem !important;
+                padding: 0.5rem 0.75rem !important;
+                font-size: 0.8rem !important;
+                text-align: center !important;
+            }
+            
+            /* Make languages and specialties flex horizontally on mobile */
+            .about-sidebar div[style*="flex-direction: column"] {
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                gap: 0.5rem !important;
             }
         }
     </style>
