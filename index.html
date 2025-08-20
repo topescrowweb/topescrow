@@ -1238,8 +1238,8 @@
             
             /* Mobile Service Slider Overrides */
             .service-slider-container {
-                max-width: 300px !important;
-                margin: 0 auto 2rem auto !important;
+                max-width: 280px !important;
+                margin: 0 auto 1.5rem auto !important;
             }
             
             .service-slide {
@@ -1280,11 +1280,14 @@
                 width: 100%;
                 max-width: 320px;
                 height: 240px;
+                margin: 0 auto;
+                display: block;
             }
 
             .hero-image-container {
-                justify-content: center;
-                align-items: center;
+                justify-content: center !important;
+                align-items: center !important;
+                flex-direction: column !important;
             }
             
             .hero-image-container > div {
@@ -1300,8 +1303,14 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 width: 100%;
                 overflow: hidden;
+                order: 2;
+            }
+            
+            .hero-grid > div:first-child {
+                order: 1;
             }
             
             /* Additional mobile container improvements */
