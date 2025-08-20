@@ -2472,28 +2472,74 @@
                     <!-- Left Column - Contact Form -->
                     <div class="contact-form-section">
                         <div class="contact-container">
-                <div class="contact-form" style="background: white; border: 4px solid #4364A1; border-radius: 1.5rem; padding: 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden;">
-                    <div style="background: linear-gradient(135deg, #4364A1 0%, #5a7bc4 100%); padding: 1.5rem; text-align: center;">
-                        <h2 style="color: white; margin: 0; font-size: 1.5rem; font-weight: bold;">Request Consultation</h2>
-                        <p style="color: rgba(255,255,255,0.9); margin: 0.5rem 0 0 0; font-size: 0.875rem;">Fill out the form below and we'll get back to you within 24 hours</p>
+                <div class="contact-form">
+                    <h2>Request Consultation</h2>
+                    
+                    <form id="contactForm" action="https://formspree.io/f/xovlorwe" method="POST" onsubmit="handleFormspreeSubmit(event)">
+                        <div class="form-grid">
+                            <input 
+                                type="text" 
+                                name="firstName" 
+                                placeholder="First Name *" 
+                                class="form-input" 
+                                required
+                            >
+                            <input 
+                                type="text" 
+                                name="lastName" 
+                                placeholder="Last Name *" 
+                                class="form-input" 
+                                required
+                            >
+                        </div>
+
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Email Address *" 
+                            class="form-input" 
+                            required
+                            style="margin-bottom: 1.5rem;"
+                        >
+
+                        <input 
+                            type="tel" 
+                            name="phone" 
+                            placeholder="Phone Number (Optional)" 
+                            class="form-input"
+                            style="margin-bottom: 1.5rem;"
+                        >
+
+                        <textarea 
+                            name="message" 
+                            placeholder="Tell us about your escrow needs..." 
+                            class="form-textarea" 
+                            required
+                            maxlength="500"
+                        ></textarea>
+                        <div class="character-count">
+                            <span id="charCount">0</span>/500 characters
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            Submit
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="formSuccess" style="display: none; text-align: center; padding: 2rem; background: rgba(34, 197, 94, 0.1); border: 2px solid #22c55e; border-radius: 12px; margin-top: 1rem;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">✅</div>
+                        <h3 style="color: #16a34a; font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Thank You!</h3>
+                        <p style="color: #166534; margin-bottom: 1rem;">Your consultation request has been submitted successfully.</p>
+                        <p style="color: #166534; font-size: 0.875rem;">We'll contact you within 24 hours to discuss your escrow needs.</p>
                     </div>
                     
-                    <div style="padding: 1rem;">
-                        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); background: #f9fafb;">
-                            <iframe 
-                                width="100%" 
-                                height="500px" 
-                                src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=HR0ojU2c90uxbgMtFd6fbMWpb9T9cOBIpc0SaKH3VSBUMjdINkxLTDlKNjhEUDNJSVhZRVhDOEZXVS4u&embed=true" 
-                                frameborder="0" 
-                                marginwidth="0" 
-                                marginheight="0" 
-                                style="border: none; width: 100%; min-height: 500px; border-radius: 12px;" 
-                                allowfullscreen 
-                                webkitallowfullscreen 
-                                mozallowfullscreen 
-                                msallowfullscreen>
-                            </iframe>
-                        </div>
+                    <!-- Error Message -->
+                    <div id="formError" style="display: none; text-align: center; padding: 2rem; background: rgba(239, 68, 68, 0.1); border: 2px solid #ef4444; border-radius: 12px; margin-top: 1rem;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">❌</div>
+                        <h3 style="color: #dc2626; font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Submission Error</h3>
+                        <p style="color: #b91c1c; margin-bottom: 1rem;">There was an issue submitting your form. Please try again.</p>
+                        <button onclick="resetForm()" style="background: #4364A1; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; font-size: 0.875rem;">Try Again</button>
                     </div>
                         </div>
                         </div>
@@ -3289,6 +3335,74 @@
                     item.style.display = 'block';
                 });
             }
+        }
+
+        // Enhanced Formspree Form Handling
+        async function handleFormspreeSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const formSuccess = document.getElementById('formSuccess');
+            const formError = document.getElementById('formError');
+            
+            // Reset previous states
+            formSuccess.style.display = 'none';
+            formError.style.display = 'none';
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.style.background = '#9ca3af';
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success
+                    form.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                    
+                    // Reset form after 5 seconds
+                    setTimeout(() => {
+                        resetForm();
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error
+                formError.style.display = 'block';
+                console.error('Form submission error:', error);
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+                submitBtn.style.background = '#4364A1';
+            }
+        }
+        
+        function resetForm() {
+            const form = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            const formError = document.getElementById('formError');
+            
+            // Hide messages and show form
+            formSuccess.style.display = 'none';
+            formError.style.display = 'none';
+            form.style.display = 'block';
+            
+            // Reset form fields
+            form.reset();
+            
+            // Reset character count
+            updateCharacterCount();
         }
     </script>
 </body>
