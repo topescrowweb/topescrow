@@ -339,6 +339,17 @@
         #resources-list a:hover {
             color: #2d4a7a !important;
         }
+        
+        /* Team Member Cards Consistent Height */
+        .team-member {
+            min-height: 200px !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        
+        .team-member > div:last-child {
+            margin-top: auto !important;
+        }
 
         .faq-toggle {
             color: #4364A1;
@@ -1772,15 +1783,16 @@
                                         <p>Complex commercial transactions handled by experienced professionals with expertise.</p>
                                     </div>
                                     <div class="service-slide">
-                                        <h3>Bulk Sales</h3>
-                                        <p>Comprehensive services for bulk property transactions and portfolio sales management.</p>
+                                        <h3>Bulk Sales & Business Transfers</h3>
+                                        <p>We support the escrow needs of business transactions, whether or not real property is involved, in compliance with California's Bulk Sale Laws and UCC requirements.</p>
                                     </div>
                                     <div class="service-slide">
                                         <h3>Liquor License Transfer</h3>
                                         <p>Specialized handling of liquor license transfers with regulatory compliance expertise.</p>
                                     </div>
                                     <div class="service-slide">
-                                        <h3>Mobile & Manafactured Homes</h3>
+                                        <h3>Mobile & Manufactured Homes</h3>
+                                        <p>We're experienced in handling escrow for both personal property and real property mobile home transactions, including those located in parks or on owned land.</p>
                                     </div>                                    
                                 </div>
                             </div>
@@ -2178,26 +2190,26 @@
                             </div>
 
                             <!-- Harry Hwang - Los Angeles Office -->
-                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease;">
+                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
                                 <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
                                     <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
                                 </div>
                                 <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Harry Hwang</h4>
                                 <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">VP/Senior Escrow Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px;">
+                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
                                     <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> harry@topescrow.net</p>
                                     <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (213) 320-1099 ext. 154</p>
                                 </div>
                             </div>
 
                             <!-- Aileen Han - Los Angeles Office -->
-                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease;">
+                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
                                 <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
                                     <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
                                 </div>
                                 <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Aileen Han</h4>
                                 <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Senior Escrow Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px;">
+                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
                                     <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> aileen@topescrow.net</p>
                                     <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (213) 320-1099 ext. 151</p>
                                 </div>
@@ -3249,40 +3261,82 @@
             }
         });
         
-        // Service Slider Functionality
+        // Service Slider Functionality - Improved & Bug-Fixed
         let currentSlide = 0;
-        const totalSlides = 7;
+        let totalSlides = 7;
         let slideInterval;
+        let isSliderInitialized = false;
         
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
+        function initializeSlider() {
+            if (isSliderInitialized) return;
+            
             const slider = document.getElementById('serviceSlider');
             const dots = document.querySelectorAll('.slider-dot');
             
-            // Move slider
+            if (!slider || dots.length === 0) {
+                setTimeout(initializeSlider, 100);
+                return;
+            }
+            
+            totalSlides = Math.max(dots.length, 7);
+            isSliderInitialized = true;
+            
+            // Start auto-slide
+            startAutoSlide();
+            
+            // Add hover pause functionality
+            const sliderContainer = document.querySelector('.service-slider-container');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', pauseAutoSlide);
+                sliderContainer.addEventListener('mouseleave', resumeAutoSlide);
+                sliderContainer.addEventListener('touchstart', pauseAutoSlide);
+                sliderContainer.addEventListener('touchend', resumeAutoSlide);
+            }
+        }
+        
+        function goToSlide(slideIndex) {
+            if (!isSliderInitialized) return;
+            
+            slideIndex = Math.max(0, Math.min(slideIndex, totalSlides - 1));
+            currentSlide = slideIndex;
+            
+            const slider = document.getElementById('serviceSlider');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            if (!slider) return;
+            
             slider.style.transform = `translateX(-${slideIndex * 100}%)`;
             
-            // Update dots
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === slideIndex);
             });
             
-            // Reset auto-slide timer
             resetAutoSlide();
         }
         
         function nextSlide() {
+            if (!isSliderInitialized) return;
             currentSlide = (currentSlide + 1) % totalSlides;
             goToSlide(currentSlide);
         }
         
         function prevSlide() {
+            if (!isSliderInitialized) return;
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             goToSlide(currentSlide);
         }
         
         function startAutoSlide() {
-            slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+        
+        function pauseAutoSlide() {
+            clearInterval(slideInterval);
+        }
+        
+        function resumeAutoSlide() {
+            startAutoSlide();
         }
         
         function resetAutoSlide() {
@@ -3292,14 +3346,7 @@
         
         // Initialize slider when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            startAutoSlide();
-            
-            // Pause auto-slide on hover
-            const sliderContainer = document.querySelector('.service-slider-container');
-            if (sliderContainer) {
-                sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-                sliderContainer.addEventListener('mouseleave', startAutoSlide);
-            }
+            setTimeout(initializeSlider, 100);
         });
         
         // Services Show More functionality
