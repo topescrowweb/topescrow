@@ -1206,6 +1206,10 @@
                 gap: 2rem;
             }
             
+            .hero-grid {
+                padding: 0 1rem;
+            }
+            
             /* Hero Mobile Improvements */
             .hero {
                 padding: 3rem 0 !important;
@@ -1280,6 +1284,29 @@
 
             .hero-image-container {
                 justify-content: center;
+                align-items: center;
+            }
+            
+            .hero-image-container > div {
+                width: 100% !important;
+                max-width: 320px !important;
+                font-size: 0.6rem !important;
+                margin: 0.5rem auto 0 auto !important;
+                text-align: center !important;
+            }
+            
+            /* Ensure hero section doesn't overflow on small screens */
+            .hero-grid > div:last-child {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            /* Additional mobile container improvements */
+            .container {
+                padding: 0 0.5rem !important;
             }
 
             .faq-icon {
