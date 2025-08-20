@@ -2476,6 +2476,10 @@
                     <h2>Request Consultation</h2>
                     
                     <form id="contactForm" action="https://formspree.io/f/xovlorwe" method="POST" onsubmit="handleFormspreeSubmit(event)">
+                        <!-- Hidden fields for better email organization -->
+                        <input type="hidden" name="_subject" value="New Escrow Consultation Request - Top Escrow">
+                        <input type="hidden" name="_cc" value="">
+                        <input type="hidden" name="_format" value="plain">
                         <div class="form-grid">
                             <input 
                                 type="text" 
