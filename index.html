@@ -342,7 +342,7 @@
         
         /* Team Member Cards Consistent Height */
         .team-member {
-            min-height: 200px !important;
+            min-height: 180px !important;
             display: flex !important;
             flex-direction: column !important;
         }
@@ -1570,26 +1570,31 @@
             
             /* Mobile Team Member Cards */
             .team-member {
-                padding: 1rem !important;
+                padding: 0.875rem !important;
                 font-size: 0.875rem !important;
+                min-height: 140px !important;
             }
             
             .team-member h3 {
-                font-size: 1rem !important;
-                margin-bottom: 0.5rem !important;
+                font-size: 0.95rem !important;
+                margin-bottom: 0.375rem !important;
             }
             
             .team-member p {
-                font-size: 0.75rem !important;
-                margin-bottom: 0.5rem !important;
+                font-size: 0.725rem !important;
+                margin-bottom: 0.375rem !important;
+                line-height: 1.3 !important;
             }
             
             .team-member div[style*="background: #f9fafb"] {
-                padding: 0.75rem !important;
+                padding: 0.625rem !important;
+                margin-top: 0.5rem !important;
             }
             
             .team-member div[style*="background: #f9fafb"] p {
-                font-size: 0.7rem !important;
+                font-size: 0.675rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 0.25rem !important;
             }
 
             /* General Mobile Adjustments */
@@ -1999,100 +2004,125 @@
                     <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Residential Resale</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We provide full-service escrow support for residential resale transactions, ensuring a smooth and secure experience for both buyers and sellers.</p>
-                        <ul style="list-style: none;">
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Full escrow management as a neutral third party</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Preparation and review of all escrow instructions and documents</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination of preliminary title reports and lien clearance</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Secure holding and disbursement of funds</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Proration of taxes, HOA dues, utilities, and rents</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title insurance coordination and processing</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Buyer and seller communication throughout the transaction</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Notary coordination for in-person or remote signings</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Recording and final closing services</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Optional pre-escrow packages for listings (HOA docs, reports, disclosures)</li>
-                        </ul>
+                        <div class="service-details" style="display: none;">
+                            <ul style="list-style: none;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Full escrow management as a neutral third party</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Preparation and review of all escrow instructions and documents</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination of preliminary title reports and lien clearance</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Secure holding and disbursement of funds</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Proration of taxes, HOA dues, utilities, and rents</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title insurance coordination and processing</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Buyer and seller communication throughout the transaction</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Notary coordination for in-person or remote signings</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Recording and final closing services</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Optional pre-escrow packages for listings (HOA docs, reports, disclosures)</li>
+                            </ul>
+                        </div>
+                        <button class="service-toggle-btn" onclick="toggleServiceDetails(this)" style="background: #4364A1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.875rem; margin-top: 1rem;">
+                            Show More
+                        </button>
                     </div>
 
                     <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Refinance</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">Our refinance escrow services are designed for speed, precision, and compliance, supporting homeowners and lenders with seamless closings.</p>
-                        <ul style="list-style: none;">
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Escrow opening and coordination with lenders</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Loan document handling and borrower communication</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Payoff demand ordering and existing lien clearance</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title updates and insurance coordination</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Accurate proration of property taxes and insurance</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Secure wire transfers and disbursement of funds</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Prompt delivery of final settlement statements and closing packages</li>
-                        </ul>
+                        <div class="service-details" style="display: none;">
+                            <ul style="list-style: none;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Escrow opening and coordination with lenders</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Loan document handling and borrower communication</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Payoff demand ordering and existing lien clearance</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title updates and insurance coordination</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Accurate proration of property taxes and insurance</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Secure wire transfers and disbursement of funds</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Prompt delivery of final settlement statements and closing packages</li>
+                            </ul>
+                        </div>
+                        <button class="service-toggle-btn" onclick="toggleServiceDetails(this)" style="background: #4364A1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.875rem; margin-top: 1rem;">
+                            Show More
+                        </button>
                     </div>
 
                     <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">New Home Sales</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We work closely with homebuilders, developers, and buyers to facilitate smooth closings for newly constructed properties. Our team understands the unique timelines and documentation requirements that come with new developments.</p>
-                        <ul style="list-style: none;">
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination with builders and sales teams</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Review and processing of purchase contracts and builder addenda</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Handling of phased development closings and lot releases</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title and insurance coordination</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Management of deposits, incentives, and construction credits</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>HOA setup and documentation</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Streamlined communication with lender, builder, and buyer</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Final walkthrough coordination and closing</li>
-                        </ul>
+                        <div class="service-details" style="display: none;">
+                            <ul style="list-style: none;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination with builders and sales teams</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Review and processing of purchase contracts and builder addenda</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Handling of phased development closings and lot releases</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title and insurance coordination</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Management of deposits, incentives, and construction credits</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>HOA setup and documentation</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Streamlined communication with lender, builder, and buyer</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Final walkthrough coordination and closing</li>
+                            </ul>
+                        </div>
+                        <button class="service-toggle-btn" onclick="toggleServiceDetails(this)" style="background: #4364A1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.875rem; margin-top: 1rem;">Show More</button>
                     </div>
                     <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Mobile & Manufactured Homes</h2>
-                        <p style="color: #6b7280; margin-bottom: 1.5rem;">We’re experienced in handling escrow for both personal property and real property mobile home transactions, including those located in parks or on owned land.</p>
-                        <ul style="list-style: none;">
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Determining proper recording agency (County Recorder vs. HCD/DMV)</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title and registration processing for personal property mobile homes</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination with park management and HOA (if applicable)</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Handling of mobile home-specific disclosures and forms</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Insurance and lender coordination</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Tax prorations, rent adjustments, and fee disbursements</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Support for trust or estate-held mobile home sales</li>
-                        </ul>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">We're experienced in handling escrow for both personal property and real property mobile home transactions, including those located in parks or on owned land.</p>
+                        <div class="service-details" style="display: none;">
+                            <ul style="list-style: none;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Determining proper recording agency (County Recorder vs. HCD/DMV)</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Title and registration processing for personal property mobile homes</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination with park management and HOA (if applicable)</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Handling of mobile home-specific disclosures and forms</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Insurance and lender coordination</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Tax prorations, rent adjustments, and fee disbursements</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Support for trust or estate-held mobile home sales</li>
+                            </ul>
+                        </div>
+                        <button class="service-toggle-btn" onclick="toggleServiceDetails(this)" style="background: #4364A1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.875rem; margin-top: 1rem;">Show More</button>
                     </div>                    
 
                     <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Commercial</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We manage a variety of commercial transactions from multi-unit investments to office, retail, and industrial properties with the experience and detail needed for complex deals.</p>
-                        <ul style="list-style: none;">
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Customized escrow instructions tailored to property type</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Due diligence coordination and delivery of required disclosures</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Environmental report and zoning document handling</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Entity and multi-party coordination (LLCs, corporations, syndicates)</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Commercial loan document processing and fund disbursement</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Proration of CAM fees, leases, and tenant deposits</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Timely recording and transaction closing</li>
-                        </ul>
+                        <div class="service-details" style="display: none;">
+                            <ul style="list-style: none;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Customized escrow instructions tailored to property type</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Due diligence coordination and delivery of required disclosures</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Environmental report and zoning document handling</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Entity and multi-party coordination (LLCs, corporations, syndicates)</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Commercial loan document processing and fund disbursement</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Proration of CAM fees, leases, and tenant deposits</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Timely recording and transaction closing</li>
+                            </ul>
+                        </div>
+                        <button class="service-toggle-btn" onclick="toggleServiceDetails(this)" style="background: #4364A1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.875rem; margin-top: 1rem;">Show More</button>
                     </div>
 
                     <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Bulk Sales & Business Transfers</h2>
-                        <p style="color: #6b7280; margin-bottom: 1.5rem;">We support the escrow needs of business transactions, whether or not real property is involved, in compliance with California’s Bulk Sale Laws and UCC requirements.</p>
-                        <ul style="list-style: none;">
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Bulk Sale escrow setup in accordance with California Commercial Code</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination with CPAs, brokers, and business attorneys</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Filing and publication of Notice to Creditors (per statutory timelines)</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Sales tax, payroll tax, and liability verification</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Asset, equipment, and inventory transfer documentation</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Final disbursement after required clearances</li>
-                        </ul>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">We support the escrow needs of business transactions, whether or not real property is involved, in compliance with California's Bulk Sale Laws and UCC requirements.</p>
+                        <div class="service-details" style="display: none;">
+                            <ul style="list-style: none;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Bulk Sale escrow setup in accordance with California Commercial Code</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination with CPAs, brokers, and business attorneys</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Filing and publication of Notice to Creditors (per statutory timelines)</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Sales tax, payroll tax, and liability verification</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Asset, equipment, and inventory transfer documentation</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Final disbursement after required clearances</li>
+                            </ul>
+                        </div>
+                        <button class="service-toggle-btn" onclick="toggleServiceDetails(this)" style="background: #4364A1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.875rem; margin-top: 1rem;">Show More</button>
                     </div>
 
                     <div class="service-item" style="background: #f9fafb; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                         <h2 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Liquor License Transfer</h2>
                         <p style="color: #6b7280; margin-bottom: 1.5rem;">We provide specialized escrow services for transactions involving California liquor licenses, whether as part of a business sale or a standalone license transfer.</p>
-                        <ul style="list-style: none;">
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>ABC-compliant escrow handling with conditional release clauses</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination with California Department of Alcoholic Beverage Control (ABC)</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Notice to Creditors and publication requirements (if applicable)</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Transfer of related business assets and goodwill</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Funds held in escrow until final ABC approval</li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Guidance through regulatory timelines and requirements</li>
-                        </ul>
+                        <div class="service-details" style="display: none;">
+                            <ul style="list-style: none;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>ABC-compliant escrow handling with conditional release clauses</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Coordination with California Department of Alcoholic Beverage Control (ABC)</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Notice to Creditors and publication requirements (if applicable)</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Transfer of related business assets and goodwill</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Funds held in escrow until final ABC approval</li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #6b7280;"><span style="color: #4364A1; margin-right: 0.75rem;">✓</span>Guidance through regulatory timelines and requirements</li>
+                            </ul>
+                        </div>
+                        <button class="service-toggle-btn" onclick="toggleServiceDetails(this)" style="background: #4364A1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.875rem; margin-top: 1rem;">Show More</button>
                     </div>
                 </div>
                 
@@ -3422,6 +3452,20 @@
                 // Expand - add show-all class
                 serviceItems.forEach(item => item.classList.add('show-all'));
                 showMoreText.textContent = 'Show Less Services';
+            }
+        }
+        
+        // Service Details Toggle functionality
+        function toggleServiceDetails(button) {
+            const serviceItem = button.closest('.service-item');
+            const detailsDiv = serviceItem.querySelector('.service-details');
+            
+            if (detailsDiv.style.display === 'none') {
+                detailsDiv.style.display = 'block';
+                button.textContent = 'Show Less';
+            } else {
+                detailsDiv.style.display = 'none';
+                button.textContent = 'Show More';
             }
         }
 
