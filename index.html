@@ -3216,8 +3216,8 @@
             // Show all team members if "All" is selected
             if (officeName === 'All') {
                 teamMembers.forEach(member => {
-                    member.style.display = 'flex'; // Use flex to match original display
-                    member.style.opacity = '1';
+                    member.style.setProperty('display', 'flex', 'important');
+                    member.style.setProperty('opacity', '1', 'important');
                 });
                 
                 // Show Diamond Bar notice
@@ -3233,10 +3233,10 @@
                 console.log('Member office:', memberOffice, 'Target:', officeName); // Debug log
                 
                 if (memberOffice === officeName) {
-                    member.style.display = 'flex'; // Use flex to match original display
-                    member.style.opacity = '1';
+                    member.style.setProperty('display', 'flex', 'important');
+                    member.style.setProperty('opacity', '1', 'important');
                 } else {
-                    member.style.display = 'none';
+                    member.style.setProperty('display', 'none', 'important');
                 }
             });
             
@@ -3244,7 +3244,7 @@
             if (officeName === 'Diamond Bar') {
                 // Hide all team members, show Diamond Bar notice
                 teamMembers.forEach(member => {
-                    member.style.display = 'none';
+                    member.style.setProperty('display', 'none', 'important');
                 });
                 if (diamondBarNotice) {
                     diamondBarNotice.style.display = 'block';
