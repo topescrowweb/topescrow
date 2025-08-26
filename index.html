@@ -1558,9 +1558,15 @@
             /* Mobile Office Dropdown */
             #office-filter {
                 font-size: 0.875rem !important;
-                padding: 0.625rem 2rem 0.625rem 0.75rem !important;
+                padding: 0.625rem 2.5rem 0.625rem 0.75rem !important;
                 min-width: 280px !important;
                 max-width: 90vw !important;
+            }
+
+            /* Ensure dropdown arrow is properly positioned on mobile */
+            .dropdown-container {
+                position: relative !important;
+                display: inline-block !important;
             }
 
             /* Mobile Team Member Cards */
@@ -2247,19 +2253,21 @@
                         
                         <!-- Office Location Dropdown -->
                         <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-                            <div style="position: relative;">
+                            <div style="display: flex; flex-direction: column; align-items: center;">
                                 <label for="office-filter" style="display: block; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem; font-size: 0.875rem;">Filter by Office:</label>
-                                <select id="office-filter" onchange="filterTeamByOffice(this.value)" style="appearance: none; background: white; border: 2px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 2.5rem 0.75rem 1rem; font-size: 1rem; color: #374151; cursor: pointer; min-width: 200px; transition: border-color 0.3s ease;">
-                                    <option value="All">All Locations (6 Members)</option>
-                                    <option value="Los Angeles">Los Angeles (5 Members)</option>
-                                    <option value="Granada Hills">Granada Hills (1 Member)</option>
-                                    <option value="Diamond Bar">Diamond Bar (Coming Soon)</option>
-                                </select>
-                                <!-- Custom dropdown arrow -->
-                                <div style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #6b7280;">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="6,9 12,15 18,9"></polyline>
-                                    </svg>
+                                <div class="dropdown-container" style="position: relative; display: inline-block;">
+                                    <select id="office-filter" onchange="filterTeamByOffice(this.value)" style="appearance: none; background: white; border: 2px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 2.5rem 0.75rem 1rem; font-size: 1rem; color: #374151; cursor: pointer; min-width: 200px; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#4364A1'" onblur="this.style.borderColor='#e5e7eb'">
+                                        <option value="All">All Locations (6 Members)</option>
+                                        <option value="Los Angeles">Los Angeles (5 Members)</option>
+                                        <option value="Granada Hills">Granada Hills (1 Member)</option>
+                                        <option value="Diamond Bar">Diamond Bar (Coming Soon)</option>
+                                    </select>
+                                    <!-- Custom dropdown arrow -->
+                                    <div style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #6b7280;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -3202,12 +3210,14 @@
             const teamMembers = document.querySelectorAll('.team-member');
             const diamondBarNotice = document.querySelector('.diamond-bar-notice');
             
+            console.log('Filtering by:', officeName); // Debug log
+            console.log('Found team members:', teamMembers.length); // Debug log
+            
             // Show all team members if "All" is selected
             if (officeName === 'All') {
                 teamMembers.forEach(member => {
-                    member.style.display = 'block';
+                    member.style.display = 'flex'; // Use flex to match original display
                     member.style.opacity = '1';
-                    member.style.transform = 'none';
                 });
                 
                 // Show Diamond Bar notice
@@ -3220,10 +3230,11 @@
             // Filter team members by selected office
             teamMembers.forEach(member => {
                 const memberOffice = member.getAttribute('data-office');
+                console.log('Member office:', memberOffice, 'Target:', officeName); // Debug log
+                
                 if (memberOffice === officeName) {
-                    member.style.display = 'block';
+                    member.style.display = 'flex'; // Use flex to match original display
                     member.style.opacity = '1';
-                    member.style.transform = 'none';
                 } else {
                     member.style.display = 'none';
                 }
@@ -3245,6 +3256,16 @@
                 }
             }
         }
+
+        // Initialize dropdown on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const officeFilter = document.getElementById('office-filter');
+            if (officeFilter) {
+                // Set default value and trigger initial filter
+                officeFilter.value = 'All';
+                filterTeamByOffice('All');
+            }
+        });
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
