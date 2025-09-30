@@ -340,16 +340,6 @@
             color: #2d4a7a !important;
         }
         
-        /* Team Member Cards Consistent Height */
-        .team-member {
-            min-height: 220px !important;
-            display: flex !important;
-            flex-direction: column !important;
-        }
-        
-        .team-member > div:last-child {
-            margin-top: auto !important;
-        }
 
         .faq-toggle {
             color: #4364A1;
@@ -1301,13 +1291,6 @@
                 flex-direction: column !important;
             }
             
-            .hero-image-container > div {
-                width: 100% !important;
-                max-width: 320px !important;
-                font-size: 0.6rem !important;
-                margin: 0.5rem auto 0 auto !important;
-                text-align: center !important;
-            }
             
             /* Ensure hero section doesn't overflow on small screens */
             .hero-grid > div:last-child {
@@ -1545,64 +1528,6 @@
                 gap: 1rem;
             }
 
-            /* Team Section Mobile Responsive */
-            .about-team-grid {
-                grid-template-columns: 1fr 1fr !important;
-                gap: 0.75rem !important;
-                max-width: 100% !important;
-                margin: 0 auto !important;
-                padding: 0 !important;
-                box-sizing: border-box;
-            }
-
-            /* Mobile Office Dropdown */
-            #office-filter {
-                font-size: 0.875rem !important;
-                padding: 0.625rem 2.5rem 0.625rem 0.75rem !important;
-                min-width: 280px !important;
-                max-width: 90vw !important;
-            }
-
-            /* Ensure dropdown arrow is properly positioned on mobile */
-            .dropdown-container {
-                position: relative !important;
-                display: inline-block !important;
-            }
-
-            /* Mobile Team Member Cards */
-            .team-member {
-                padding: 0.75rem !important;
-                font-size: 0.8rem !important;
-                min-height: 160px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                box-sizing: border-box !important;
-                overflow: hidden !important;
-            }
-            
-            .team-member h3,
-            .team-member h4 {
-                font-size: 0.875rem !important;
-                margin-bottom: 0.25rem !important;
-                line-height: 1.3 !important;
-            }
-            
-            .team-member p {
-                font-size: 0.7rem !important;
-                margin-bottom: 0.25rem !important;
-                line-height: 1.2 !important;
-            }
-            
-            .team-member div[style*="background: #f9fafb"] {
-                padding: 0.5rem !important;
-                margin-top: 0.5rem !important;
-            }
-            
-            .team-member div[style*="background: #f9fafb"] p {
-                font-size: 0.65rem !important;
-                line-height: 1.1 !important;
-                margin-bottom: 0.2rem !important;
-            }
 
             /* General Mobile Adjustments */
             .section {
@@ -1888,9 +1813,6 @@
                     </div>
                     <div class="hero-image-container" style="display: flex; flex-direction: column; align-items: flex-end;">
                         <img src="assets/images/LaDowntown.jpg" alt="Los Angeles Downtown Skyline" class="hero-image">
-                        <div style="text-align: center; margin-top: 0.5rem; font-size: 0.7rem; color: #6b7280; width: 480px;">
-                            Photo by <a href="https://unsplash.com/@henning?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" style="color: #4364A1; text-decoration: none;">Henning Witzel</a> on <a href="https://unsplash.com/photos/aerial-photography-of-cityscape-at-night-ukvgqriuOgo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" style="color: #4364A1; text-decoration: none;">Unsplash</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -2242,142 +2164,6 @@
             </div>
         </section>
 
-        <section style="background: #f9fafb; padding: 4rem 0;">
-            <div class="container">
-                <div style="text-align: center;">
-                    <h2 style="font-size: 2rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Our Team</h2>
-                    <p style="color: #6b7280; margin-bottom: 3rem;">Meet the experienced professionals who make your escrow process seamless.</p>
-                    
-                    <!-- Office Locations & Team -->
-                    <div style="display: flex; flex-direction: column; gap: 3rem;">
-                        
-                        <!-- Office Location Dropdown -->
-                        <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <label for="office-filter" style="display: block; font-weight: 600; color: #4364A1; margin-bottom: 0.5rem; font-size: 0.875rem;">Filter by Office:</label>
-                                <div class="dropdown-container" style="position: relative; display: inline-block;">
-                                    <select id="office-filter" onchange="filterTeamByOffice(this.value)" style="appearance: none; background: white; border: 2px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 2.5rem 0.75rem 1rem; font-size: 1rem; color: #374151; cursor: pointer; min-width: 200px; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='#4364A1'" onblur="this.style.borderColor='#e5e7eb'">
-                                        <option value="All">All Locations (6 Members)</option>
-                                        <option value="Los Angeles">Los Angeles (5 Members)</option>
-                                        <option value="Granada Hills">Granada Hills (1 Member)</option>
-                                        <option value="Diamond Bar">Diamond Bar (Coming Soon)</option>
-                                    </select>
-                                    <!-- Custom dropdown arrow -->
-                                    <div style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: #6b7280;">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <polyline points="6,9 12,15 18,9"></polyline>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- All Team Members in 3x2 Grid -->
-                        <div class="about-team-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
-                            
-                            <!-- CEO - Los Angeles Office -->
-                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
-                                </div>
-                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Anne Cho</h4>
-                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Chief Executive Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> anne@topescrow.net</p>
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (626) 297-5188</p>
-                                </div>
-                            </div>
-
-                            <!-- Harry Hwang - Los Angeles Office -->
-                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
-                                </div>
-                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Harry Hwang</h4>
-                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">VP/Senior Escrow Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> harry@topescrow.net</p>
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (213) 320-1099 ext. 154</p>
-                                </div>
-                            </div>
-
-                            <!-- Aileen Han - Los Angeles Office -->
-                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
-                                </div>
-                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Aileen Han</h4>
-                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Senior Escrow Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> aileen@topescrow.net</p>
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (213) 320-1099 ext. 151</p>
-                                </div>
-                            </div>
-                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
-                                </div>
-                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Anne Hong</h4>
-                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Senior Escrow Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> anneh@topescrow.net</p>
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (213) 320-1099 ext. 153</p>
-                                </div>
-                            </div>
-
-                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
-                                </div>
-                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Tracy Ko</h4>
-                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Escrow Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> tracy@topescrow.net</p>
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (213) 320-1099 ext. 152</p>
-                                </div>
-                            </div>
-
-                            <div class="team-member" data-office="Granada Hills" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Granada Hills</span>
-                                </div>
-                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Sandra Cano</h4>
-                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Senior Escrow Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> sandy@topescrow.net</p>
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (818) 453-6128</p>
-                                </div>
-                            </div>
-
-                            <div class="team-member" data-office="Los Angeles" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid #4364A1; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column;">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                                    <span style="background: rgba(67, 100, 161, 0.1); color: #4364A1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 500;">Los Angeles</span>
-                                </div>
-                                <h4 style="font-size: 1.125rem; font-weight: bold; color: #4364A1; margin-bottom: 0.5rem;">Teri Pai</h4>
-                                <p style="color: #6b7280; font-weight: 500; margin-bottom: 1rem; font-size: 0.875rem;">Jr Escrow Officer</p>
-                                <div style="background: #f9fafb; padding: 1rem; border-radius: 6px; margin-top: auto;">
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin-bottom: 0.5rem;"><strong>Email:</strong> teri@topescrow.net</p>
-                                    <p style="color: #6b7280; font-size: 0.8125rem; margin: 0;"><strong>Phone:</strong> (213) 320-1099 ext. 150</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <!-- Diamond Bar Coming Soon Notice -->
-                        <div class="diamond-bar-notice" style="background: rgba(245, 158, 11, 0.1); padding: 2rem; border-radius: 12px; border: 2px solid rgba(245, 158, 11, 0.2); text-align: center; max-width: 600px; margin: 0 auto; transition: all 0.3s ease;">
-                            <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏗️</div>
-                            <h3 style="font-size: 1.5rem; font-weight: bold; color: #4364A1; margin-bottom: 1rem;">Diamond Bar Office - Team Expansion</h3>
-                            <p style="color: #6b7280; margin-bottom: 1rem;">We're actively expanding our team at our Diamond Bar location to better serve the San Gabriel Valley area.</p>
-                            <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
-                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;"><strong>Current Status:</strong> Office operational with full support from our Los Angeles team</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- Resources Page -->
@@ -3205,67 +2991,6 @@
             }
         }
 
-        // Team filtering functionality
-        function filterTeamByOffice(officeName) {
-            const teamMembers = document.querySelectorAll('.team-member');
-            const diamondBarNotice = document.querySelector('.diamond-bar-notice');
-            
-            console.log('Filtering by:', officeName); // Debug log
-            console.log('Found team members:', teamMembers.length); // Debug log
-            
-            // Show all team members if "All" is selected
-            if (officeName === 'All') {
-                teamMembers.forEach(member => {
-                    member.style.setProperty('display', 'flex', 'important');
-                    member.style.setProperty('opacity', '1', 'important');
-                });
-                
-                // Show Diamond Bar notice
-                if (diamondBarNotice) {
-                    diamondBarNotice.style.display = 'block';
-                }
-                return;
-            }
-            
-            // Filter team members by selected office
-            teamMembers.forEach(member => {
-                const memberOffice = member.getAttribute('data-office');
-                console.log('Member office:', memberOffice, 'Target:', officeName); // Debug log
-                
-                if (memberOffice === officeName) {
-                    member.style.setProperty('display', 'flex', 'important');
-                    member.style.setProperty('opacity', '1', 'important');
-                } else {
-                    member.style.setProperty('display', 'none', 'important');
-                }
-            });
-            
-            // Handle Diamond Bar office (no employees yet)
-            if (officeName === 'Diamond Bar') {
-                // Hide all team members, show Diamond Bar notice
-                teamMembers.forEach(member => {
-                    member.style.setProperty('display', 'none', 'important');
-                });
-                if (diamondBarNotice) {
-                    diamondBarNotice.style.display = 'block';
-                }
-            } else {
-                // Hide Diamond Bar notice when filtering other offices
-                if (diamondBarNotice) {
-                    diamondBarNotice.style.display = 'none';
-                }
-            }
-        }
-
-        // Initialize dropdown on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const officeFilter = document.getElementById('office-filter');
-            if (officeFilter) {
-                // Set default value and trigger initial filter
-                officeFilter.value = 'All';
-                filterTeamByOffice('All');
-            }
-        });
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
