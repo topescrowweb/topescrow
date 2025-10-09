@@ -159,6 +159,13 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
+            min-height: 60vh;
+        }
+
+        .hero-grid > div:first-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero h1 {
@@ -166,6 +173,7 @@
             font-weight: bold;
             color: #1f2937;
             margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
         .hero p {
@@ -221,7 +229,8 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             gap: clamp(1rem, 2.5vw, 1.5rem);
             margin: 2rem 0;
         }
@@ -984,12 +993,15 @@
 
         .footer-offices {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .footer-office {
-            text-align: left;
+            text-align: center;
+            padding: 1rem;
         }
 
         .footer-office h4 {
@@ -1650,8 +1662,9 @@
             }
 
             .footer-offices {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 0.75rem;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                max-width: 100%;
             }
             
             .footer-office {
@@ -1853,7 +1866,7 @@
             <div class="container">
                 <div class="hero-grid">
                     <div>
-                        <h1>Welcome to Top Escrow</h1>
+                        <h1>Welcome to<br>Top Escrow</h1>
                         <p>Our team of Escrow Professionals are ready to serve your escrow needs. We specialize in many types of complex escrows, such as:</p>
                         <div class="service-slider-container">
                             <div class="service-slider-wrapper">
