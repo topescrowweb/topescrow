@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
     <title>Top Escrow - Professional Escrow Services</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/TopEscrowFlaviconNew.svg" sizes="any">
     <link rel="shortcut icon" href="assets/images/TopEscrowFlaviconNew.svg">
@@ -22,6 +23,8 @@
             line-height: 1.6;
             color: #333;
             background-color: #f9fafb;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
 
         /* Navigation */
@@ -141,7 +144,9 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .hero {
@@ -216,8 +221,8 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: clamp(1rem, 2.5vw, 1.5rem);
             margin: 2rem 0;
         }
 
@@ -888,11 +893,13 @@
 
         .offices-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 clamp(1rem, 4vw, 3rem);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .office-card {
@@ -1049,6 +1056,54 @@
             font-size: 0.875rem;
         }
 
+        /* Tablet and medium screen responsive breakpoints */
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
+            .container {
+                max-width: 95%;
+                padding: 0 2rem;
+            }
+            
+            .hero-grid {
+                gap: 2rem;
+            }
+            
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem;
+            }
+            
+            .offices-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 1200px) and (min-width: 1025px) {
+            .container {
+                max-width: 90%;
+                padding: 0 2.5rem;
+            }
+        }
+
+        /* Additional mobile breakpoint for smaller devices */
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem !important;
+            }
+            
+            .hero p {
+                font-size: 1rem !important;
+            }
+            
+            .nav-container {
+                padding: 0 0.75rem !important;
+            }
+        }
+
         /* Service Slider - Desktop & Mobile */
         .service-slider-container {
             max-width: 500px;
@@ -1177,7 +1232,37 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media screen and (max-width: 768px) {
+            /* Force mobile layout */
+            html {
+                font-size: 16px !important;
+            }
+            
+            body {
+                font-size: 1rem !important;
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+            }
+            
+            /* Mobile indicator - remove after testing */
+            body::before {
+                content: "MOBILE VIEW ACTIVE";
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: red;
+                color: white;
+                padding: 4px 8px;
+                font-size: 10px;
+                z-index: 9999;
+                display: block;
+            }
+            
+            .container {
+                max-width: 100% !important;
+                padding: 0 1rem !important;
+            }
             .nav-menu {
                 display: none;
             }
@@ -1202,8 +1287,15 @@
 
             .hero-grid,
             .faq-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+                display: grid !important;
+            }
+            
+            /* Force single column layout on mobile */
+            .hero-grid > div {
+                width: 100% !important;
+                max-width: 100% !important;
             }
             
             .hero-grid {
@@ -2479,6 +2571,7 @@
                                 </div>
 
                                 <!-- Office 2 - Granada Hills -->
+                                <!-- COMMENTED OUT: Granada Hills Office
                                 <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                                     <div onclick="openMaps('10723 White Oak Avenue Granada Hills CA 91344')" style="position: relative; cursor: pointer; height: 120px;">
                                         <iframe 
@@ -2499,6 +2592,7 @@
                                         <p style="font-size: 0.8rem; color: #4364A1; font-weight: 500;">(818) 453-6128</p>
                                     </div>
                                 </div>
+                                -->
 
                                 <!-- Office 3 - Diamond Bar -->
                                 <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -2577,7 +2671,8 @@
                             </div>
                         </div>
 
-                        <!-- Office 2 -->
+                        <!-- Office 2 - COMMENTED OUT: Granada Hills Office -->
+                        <!-- 
                         <div class="office-card">
                             <div class="office-map-container" onclick="openMaps('10723 White Oak Avenue Granada Hills CA 91344')" style="position: relative; cursor: pointer;">
                                 <iframe 
@@ -2615,6 +2710,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
 
                         <!-- Office 3 -->
                         <div class="office-card">
@@ -2718,6 +2814,7 @@
                         </div>
                     </div>
                     
+                    <!-- COMMENTED OUT: Granada Hills Office
                     <div class="footer-office">
                         <h4>Granada Hills Office</h4>
                         <p>10723 White Oak Avenue<br>Granada Hills, CA 91344</p>
@@ -2727,6 +2824,7 @@
                             <p>📠 (818) 527-6920</p>
                         </div>
                     </div>
+                    -->
                     
                     <div class="footer-office">
                         <h4>Diamond Bar Office</h4>
